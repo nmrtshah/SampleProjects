@@ -1,0 +1,143 @@
+
+Send Mail on rnd@njgroup.in.
+
+Subject should be as per given below ( from 1 to 14 )
+
+
+1) Create SVN
+
+:- Auth Person : Kinjal Sir (Send Mail to Kinjal Sir only, Sir will forward to rnd@njgroup.in)
+
+- Provide Project Name in small case.
+- Provide Server Names for dev, test and prod.
+
+TAT is 2 working days.
+
+2) SVN Checkout Problem
+
+:- Auth Person : T.L.
+
+- Provide SVN Repository URL.
+- Provide Project Server (devweb1 or devweb2 or devweb3).
+
+TAT is 2 working days.
+
+3) Mail Alias
+
+:- Auth Person : Kinjal Sir (Send Mail to Kinjal Sir only, Sir will forward to rnd@njgroup.in)
+
+- Provide Email Address.
+
+TAT is 3 working days.
+
+4) Connection Alias
+
+:- Auth Person : Kinjal Sir (Send Mail to Kinjal Sir only, Sir will forward to rnd@njgroup.in)
+
+- Provide Alias Name (we may change if required)
+- Provide User Name
+- Provide Database Server
+- Provide Database Name
+- Provide Application Servers Names (on which connection alias required, provide all at once)
+
+TAT is 3 working days.
+
+5) Property Entry
+
+:- Auth Person : Sr. TL
+
+- Provide Property Name
+- Provide Property Value for all servers (dev, test and prod).
+
+TAT is 2 working days.
+
+6) Central Code
+
+(fincom.jar, fincommunication.jar, finldap.jar, integrationsolution)
+
+:- Auth Person : Sr. TL (Send Mail to Sr. TL only, they will forward to rnd@njgroup.in)
+
+- Provide Java/PHP Files
+
+TAT is 3 working days.
+
+7) Web Service Auth
+
+:- Auth Person : Analysis Team
+
+- Provide Web Service Document in Standard Format (Get sample & guideline from finstudio)
+- Guide Line Doc : http://apps.njtechdesk.com/finstudio/documents/ws/WebServiceDocGuideLine.pdf
+- Provide document in .ods format only
+
+TAT is 3 working days.
+
+8) Finstudio Master/Report Gen Errors / Suggestions
+
+:- Auth Person : Pratik D. Patel (Send Mail to Pratik D. Patel only, he will forward to rnd@njgroup.in)
+
+- Provide Scenario, Screenshots etc.
+
+9) Finstudio Module Errors / Suggestions
+
+(Other than Master/Report Gen)
+
+:- Auth Person : T.L.
+
+- Provide Scenario, Screenshots etc.
+
+
+10) Block/Un-Block Project/URL
+
+:- Auth Person : Sr. T.L. / BA (Send Mail to Sr. T.L. / BA only, they will forward to rnd@njgroup.in)
+
+- Provide Project Name with project context name if Project need to be stop
+- Provide URL with project context if specific modules need to be stop.
+- Provide any extra information like IP to skip, User Codes etc.
+- Message to display, Default message is "Module / Project blocked due to maintainance activity. Inconvenience is regretted."
+
+TAT is 2 working days.
+
+11) Finstudio - Map / ReMap Database with Project
+
+:- Auth Person : Kinjal Sir (Send Mail to Kinjal Sir only, Sir will forward to rnd@njgroup.in)
+
+- Provide Project Id
+- Provide Project Name 
+- Provide Database Server Name
+- Provide Database Name
+
+TAT is 2 working days.
+
+12) Sonar Errors / Suggestions
+
+:- Auth Person : Pratik D. Patel (Send Mail to Pratik D. Patel only, he will forward to rnd@njgroup.in)
+
+- Provide Scenario, Screenshots etc.
+- Provide Application Server Name (devweb2, devweb3, testweb2 or testweb3)
+
+13) Jameleon / Auto Process
+
+:- Auth Person : Dept Head
+
+- Provide Detail Steps if Change in Existing
+- Provide Detail Steps if new Jameleon
+- To change Password, Provide Site Name and new Password.
+
+14) Folder Create / Delete
+
+- Use "Finstudio -> Development -> File Dir Auto Request" for the same.
+
+15) Project / Module Hits
+
+:- Auth Person : Analysis Team, Sr TL, TL.
+
+TAT is 2 working days.
+
+- Project Name, Project Id etc
+
+*) Miscellaneous
+
+:- Auth Person : Analysis Team, Sr TL, TL.
+
+- Provide Scenario, Screenshots, Errors, Suggestions etc (other than above)
+

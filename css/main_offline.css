@@ -1,0 +1,516 @@
+/************************************************************************************************************/
+/*                      CSS CREATED BY    :-  MOHAMMAD DILSHAD SHAIKH                                       */
+/*                      LAST MODIFIED ON  :-  24-08-2013                                                    */
+/************************************************************************************************************/
+/******************** This css is modified version of main.css for offline projects.*************************/
+body {background:#EAEAEA;color:#000000;font:12px/1.4 Arial;margin:0;padding:0;text-align:justify;}
+/* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+a img {border: none;}
+font {color:#FFFFFF;float:left;padding:5px 6px;}
+select {border: 1px solid #818181;height:20px;width:275px;color:#000;font-weight:normal;font-size:12px;}
+select[disabled]{background: #ccc}
+input[disabled]{background: #ccc}
+textarea[disabled]{background: #ccc}
+input {border:1px solid #818181;color:#000000;font-size:12px;font-weight:normal;height:16px;width:275px;}
+input[type=radio] {width:auto !important;}
+select.slcmb1 {width:200px;}
+ul {padding: 0;margin: 0;list-style-type:none;}
+label{float: left;line-height: 16px;}
+h1 {color:#6F6F6F;font-family:arial;font-size:26px;margin:15px 0;}
+input.radio{margin: 1px 5px;float: left;width:auto !important;border:medium none;}
+input.checkbox{margin: 1px 5px;float: left;width:auto !important;border:medium none;}
+input.checkbox2{margin: 1px 5px;width:auto !important;border:medium none;}
+textarea{ width:275px;border:1px solid #818181;}
+.addressinput {border:1px solid #818181;height:45px;text-align:left;width:275px;}
+.clear {clear: both;}
+/* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
+.container {background-color: #EAEAEA;height: auto;margin: 0 auto;/*overflow: hidden;*/width: 100%;position: relative;float:left;}
+/* header Start */
+.header {background:url(images/header_bg.jpg) repeat-x #F00;margin:0 10px;height:91px;}
+.header_bg {background-color:#F00;}
+.logo_company{float:left;padding-left:6px;padding-top:21px;}
+.partner_logo { float: right; padding: 21px 10px 0 6px;}
+/* header end */
+/* Primary Menu Start */
+.primary-menu{ border-bottom:1px solid #AAA;border-top:1px solid #AAA;margin:2px 0;}
+.primary-menu a img{ border: none;}
+.ddsubmenustyle, .ddsubmenustyle ul{ margin:0px;padding:0px;position: absolute;left: 0;top: 0;list-style-type: none;border: 1px solid #c0c0c0;visibility: hidden;z-index: 100;font-family:Arial, Helvetica, sans-serif;font-size:12px;background:#ccc;}
+.ddsubmenustyle li a { display: block;width: 190px;color: #000;text-decoration: none;padding:8px 5px;background-color:#FFF;}
+* html .ddsubmenustyle li{ display: inline-block;width: 190px;margin-bottom:-3px;}
+.ddsubmenustyle li a:hover{ background-color: #f4f4f4;color: #f00;}
+.downarrowpointer{ height: 10px;padding-left:10px !important;border: 0;background: url("images/spirites.gif") no-repeat scroll 0 -8px transparent;margin-left:5px;}
+.rightarrowpointer{ background:url("images/spirites.gif") no-repeat scroll -10px 5px transparent;border:0 none;height:10px;padding-top:3px;margin-left:-3px;position:absolute;width:10px;}
+.mattblackmenu ul { margin: 1px 0;padding: 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;list-style-type: none;background: #FFF;overflow: hidden;width: 100%;}
+.mattblackmenu li { display: inline;margin: 0;}
+.mattblackmenu li a { border-right:1px solid #C0C0C0;color:#7A7A7A;display:block;float:left;margin:0;padding:5px 15px;text-decoration:none;}
+.mattblackmenu li a:visited{color: #333;}
+.mattblackmenu li a:hover{background-color:#FFF;color: #F00;}
+.ddsubmenustyle li { margin: 0;}
+/* Primary Menu End */
+/* Login bar Start */
+/*--Deskbar --*/
+.deskbar{background-color:#b3b2b2;margin:1px 5px 0 5px;height:18px;font-size:12px;color:#FFF;padding:1px 0 0 7px;float:left;margin:1px 0 0;padding:0;width:100%;}
+.deskbar span {float:left;width:70%;padding-left: 10px;}
+.deskbar_logout {color:#333333;text-align:right;padding:0 7px 0 0px;width:25% !important; float:right !important;}
+/*--Deskbar Ends --*/
+/* Login bar End */
+
+/* breadcrum Start */
+.breadcrum {position: relative;background: #FFF;border: 1px solid #9A9A9A;color: #6F6F6F;float: left;font-size: 12px;height: 20px;margin: 1px 0 0;padding: 0;width: 100%; border-left: none;border-right: none;z-index: 1;}
+.breadcrum div{ float: left;left: 5px;position: relative;top: 2px;}
+.breadcrum a {text-decoration:none;color:#0099FF;position: relative;}
+.breadcrum a:hover {text-decoration:none;color:#000;}
+/* breadcrum End */
+/*///////// Header Section Ends //////////////*/
+
+/*///////// CONTAINER SECTION STARTS //////////////*/
+.content{background-color:#EAEAEA;padding:5px;min-height:391px;/*adjustment for new primary menu*/clear: both;}
+/* BLOCK */
+.content .block{border: 1px solid #9e9e9e;overflow:hidden;margin-top:10px;}
+.menu_new{border: 1px solid #9A9A9A;color: #6F6F6F;font-size: 12px;height: auto;margin: 5px auto;overflow: hidden;width: 987px;padding-bottom: 5px;}
+.menu_caption_bg{background-color:#787878;float:left;height:20px;padding:0;width:987px;}
+.menu_caption_text{color:#FFFFFF;float:left;font-size:14px;font-weight:bold;padding:0 10px 0 5px;text-align:left;white-space:nowrap;}
+.content_link {color:#000000;font-size:11px;text-decoration:none;}
+.content_link:hover {color:#FF0000;}
+.report_filter_bg{background-color: #CACACA;float: left;font-size: 11px;height: 21px;line-height: 19px;margin: 1px 0;padding: 0 0 0 8px;width: 979px;}
+.report_filter_bg a:hover{ text-decoration: none;}
+.report_filter_bg .report_filter {color:#000000;float:left; text-decoration:none;vertical-align:middle;margin:1px 5px;}
+.report_filter_bg .report_filter a{color:#000000;text-decoration:none;vertical-align:middle;float: left;}
+.report_filter_bg .report_filter a:hover{color: #fff;}
+.report_filter_bg .report_filter td{ padding: 0 15px 0 0;}
+.report_filter_bg #report_type, .report_filter_bg #filter, .report_filter_bg #graph, .report_filter_bg #export, .report_filter_bg #columns {float:right;height:16px;padding:0;width:20px;}
+.report_filter_bg #report_type {background:url("images/spirites.gif") no-repeat scroll -108px 0 transparent;}
+.report_filter_bg #filter{background:url("images/spirites.gif") no-repeat scroll -21px -1px transparent}
+.report_filter_bg #graph{background:url("images/spirites.gif") no-repeat scroll -41px -1px transparent}
+.report_filter_bg #export{background:url("images/spirites.gif") no-repeat scroll -62px -1px transparent}
+.report_filter_bg #columns{background:url("images/spirites.gif") no-repeat scroll -86px -1px transparent}
+.report_out{border-top:1px solid #AAAAAA;float:left;padding:5px 15px 2px;width:957px;}
+.report_out select {border:1px solid #777777;font-size:12px;padding:0;width:275px;}
+/*Previously the width static height the text was little down*/
+.button{background-image:url("images/button_bg.gif");color:#FFFFFF;font-size:14px;font-weight:bold;height:auto;line-height:18px;padding:3px;width:auto;cursor:pointer}
+#trn_print .button{ margin: 10px 10px 10px 25px;}
+#report_column_out select#col_cmb2{float: left;}
+#report_column_out .up_down a{ font-size: 22px; font-weight: bold; border: 1px solid #008FD4;}
+input#cmb_add{background:url("images/images_all.jpg") no-repeat scroll -85px -61px transparent;height:15px;width:18px;}
+input#cmb_delete{background:url("images/images_all.jpg") no-repeat scroll -61px -61px transparent;height:15px;width:18px;}
+.report_but{float:left;padding:10px 0 5px;text-align:center;width:100%;}
+.rpt_tbl {border: 1px solid #9A9A9A;color: #222222;font-size: 12px;/*margin: 0 0 10px;*/background:none repeat scroll 0 0 #EAEAEA;/*The margin has been removed as it was useles and unneccessarily adding margin*/}
+/*///////// CONTAINER SECTION ENDS //////////////*/
+/*///////// FOOTER SECTION STARTS //////////////*/
+.footer{background-color:#FF0000;color:#FFF;float:left;font-size:11px;font-style:normal;height:30px;margin-top:5px;width:100%;}
+.footer_allrights{float:left;padding:7px 0 0 7px;}
+.footer_links{float:right;padding:7px 7px 0 0;}
+.footer .footer_links a{color: #fff;text-decoration:none;}
+/*///////// FOOTER SECTION ENDS //////////////*/
+/*OTHER*/
+.tbl_border1{border: 1px solid #aaa;margin-bottom:10px;width:100%;}
+.tbl_border1 table table { background: #fff; margin: 2px;}
+.rpt_block{overflow:auto;}
+#report_block tr{ background: #dedede}
+span#accode{background:none repeat scroll 0 0 #FFFFFF;float:left;}
+.b_accode_out{float:left;width:200px;}
+.b_accode{border:2px solid #AAAAAA;float:left;width:200px;}
+input#but_exp{float:right;}
+.menu_title{ text-align: right; width: 15%;}
+.menu_content{ text-align: left;}
+
+/*------BASHBOARD STARTS------*/
+.page_content_text {float:right;font-size:14px;min-height:250px;text-align:justify;width:670px;}
+.bg_content {background-color:#FFF;border:solid 1px  #9A9A9A;width:987px;float:left;height:auto;overflow:hidden;margin-top:-6px;}
+.banner_bg {margin:0 2px;width:983px;background-color:#ebeaeb;height:auto;overflow:hidden;padding-bottom:5px;}
+.news_bg {font-size:12px;width:960px;background-color:#f3f3f3;border:solid 1px #b3b2b2;margin:10px 5px;padding:5px 5px 0 5px;}
+.news_bg ol li {margin:-10px;line-height:26px;}
+.banner {height:90px;padding:0px 6px 0 5px;}
+.banner_img {border:solid 1px #000;margin-right:22px;width:174px;height:90px;float:left;}
+.banner_right {border:solid 1px #000;width:174px;height:90px;float:right;}
+.middle {width:971px;float:left;padding:8px;}
+#collapsible_menu_left, #collapsible_menu_right{width:480px;height:auto;overflow:hidden;}
+#collapsible_menu_left {float:left;}
+#collapsible_menu_right {float:right;}
+.collapsible_menu, .collapsible_menu2 {width:476px;float:left;font-size:11px;color:#262626;margin:5px 0;}
+.collapsible_menu {height:335px;border:solid 2px #cacaca;}
+.collapsible_menu2 {height:auto;overflow:hidden;border:solid 2px #989797;}
+.collapsible_menu_tab a {background-color:#B3B2B2;color:#343434;float:left;font-size:11px;margin-right:2px;padding:3px 10px;text-decoration:none;}
+.collapsible_menu_tab a:hover {background-color:#FFF;font-weight:bold;/*NOT REQUIRED*/float:left;font-size:11px;padding:3px 10px;}
+.collapsible_menu_tab ul li.selected a{background: #fff;font-weight: bold;}
+.collapsible_menu_header, .collapsible_menu_header2{width:476px;height:20px;float:left;}
+.collapsible_menu_header {background-color:#ff0000;}
+.collapsible_menu_header2 {background-color:#989797;}
+.collapsible_menu_header span, .collapsible_menu_header2 span{font-size:12px;font-weight:bold; color:#FFF; width:80%;padding:2px 2px 2px 8px;float:left;}
+.collapsible_menu_hide,.collapsible_menu_show {width:5%;float:right;height:20px;cursor:pointer;border:medium none;}
+.collapsible_menu_hide {}
+.collapsible_menu_show {}
+.input_box {border:solid 1px #818181;font-size:11px;color:#262626;width:100px;}
+.sp {width:1px;background-color:#dfdfdf;}
+.collapsible_menu_report {background-color:#c5c5c5;text-align:center;height:20px;}
+.collapsible_menu_txt {background-color:#ebebeb;text-align:center;height:20px;}
+.collapsible_menu2_txt {width:100%;float:left}
+.collapsible_menu_tab a {font-size:11px;padding:3px 10px;float:left;background-color:#b3b2b2;text-decoration:none;color:#343434;margin-right:2px;}
+.collapsible_menu_tab a:hover,.collapsible_menu_tab a:active {font-size:11px;padding:3px 10px;padding:3px 10px;float:left;background-color:#FFF;font-weight:bold;}
+.captiontxt {width:100%;font-size:11px;float:left;padding-top:15px;}
+.captiontxt ul{list-style:url(images/tab_arow.jpg); color:#000;padding-left: 40px;}
+.captiontxt li {list-style:disc outside url("images/tab_arow.jpg");margin:5px 0;text-align:left;}
+.captiontxt ul li a {font-size:11px;list-style:url(images/tab_arow.jpg);color:#000;text-decoration:none;}
+.captiontxt ul li a:hover {font-size:11px;color:#FFF;background-color:#F00;}
+
+.report_text {color:#000000;float:left;font-size:12px;font-weight:bold;width:959px;}
+.report_content {color:#000000;font-size:11px;padding:10px 0 0;width:959px;margin: 0 auto; clear: both;}
+.menu_subcaption {color: #000000;font-size: 11px;font-weight: bold;letter-spacing: 1px;line-height: 26px;margin: 4px 0;text-align: left;padding:0 10px;}
+.menu_subcaption tr {height:26px;}
+/*NAV UP & DOWN*/
+.collapsible_menu_right{float:right;height:auto;overflow:hidden;width:480px;}
+.collapsible_menu_left{float:left;height:auto;overflow:hidden;width:480px;}
+
+.menu_caption_bg span {float:right;width:3%;position: relative;}
+.tbl_h1_bg span {float: right;height: 20px;position: relative;width: 25px;}
+.menu_caption_bg span input{background:none repeat scroll 0 0 #DDD;border:medium none;cursor:pointer;display:block;float:right;margin:3px;}
+.menu_caption_bg span input.button_hide{}
+
+span a.nav_show, span a.nav_hide, span.nav-show-new, span.nav-hide-new{display: block;float: left;height: 7px !important;position: absolute;top: 6px;width: 16px;right: 5px;}
+span a.nav_show, span.nav-show-new{background:url("images/spirites.gif") no-repeat scroll -189px -10px;}
+span a.nav_hide, span.nav-hide-new{background:url("images/spirites.gif") no-repeat scroll -189px 0;_background-position:-189px 5px;_margin-top: 0px;}
+
+.report_content_text  {width:16%;}
+.report_content_form  {width:34%;}
+/*------BASHBOARD ENDS------*/
+
+/*------------PRINTABLE VIEW--------------*/
+.printview{background:none repeat scroll 0 0 #EEEEEE;border-color:#AAAAAA -moz-use-text-color -moz-use-text-color #AAAAAA;border-style:solid none none solid;border-width:1px medium medium 1px;font-family:verdana;font-size:8.5pt;}
+.printview .printrowtitle{font-weight: bold;}
+.printview tr td{border-color:-moz-use-text-color #AAAAAA #AAAAAA -moz-use-text-color;border-right:1px solid #AAAAAA;border-style:none solid solid none;border-width:medium 1px 1px medium;}
+/*------------PRINTABLE VIEW ENDS--------------*/
+/*----------EXTRA CSS-----------*/
+/*--Datepicker starts--*/
+.input_date{float:right;width:auto;margin:1px 5px;font-size:11px;background:#cacaca; border:none;cursor:pointer;font-weight:bold;color:#666;}
+.input_date label {line-height: 19px;}
+.input_date img{float: left;margin-top: 2px;}
+.from_date{padding:0 5px;}
+.to_date{padding:0 5px;}
+.submit_date{padding: 0}
+.submit_date input{font-size:9px;font-weight:normal;height:auto;width:30px;padding:0;line-height:12px;/*Because the line-height was given in button class which is affecting in IE*/}
+input.hasDatepicker{float: left;font-family: verdana;font-size: 11px;height: 14px;margin: 2px 5px 0;padding: 0 2px 0;width: 100px;}
+input.normaldate{ height:17px;margin-left:0;padding:1px;width:245px;}
+.ui-datepicker-trigger{ cursor: pointer;}
+/*--Datepicker ends--*/
+/*--old Datepicker starts--*/
+div.from_date{padding:0 5px;float: left}
+div.to_date{padding:0 5px; float: right}
+div.submit_date{padding: 0;float: right;}
+div.submit_date input{margin-top: 2px;}
+/*--Datepicker ends--*/
+/*--GRAPH--*/
+.graph_selection{ text-align: center; font-weight: normal;}
+.graph_selection input[type=radio]{ float: none;}
+.graph_selection span{font-weight: normal;display:block; height:38px;margin:0 10px;width:45px;}
+span#graph1{background:url("images/spirites.gif") no-repeat scroll 2px -21px transparent;}
+span#graph2{background:url("images/spirites.gif") no-repeat scroll -40px -21px transparent;}
+span#graph3{background:url("images/spirites.gif") no-repeat scroll -85px -21px transparent;}
+span#graph4{background:url("images/spirites.gif") no-repeat scroll -130px -21px transparent}
+
+.menu_subcaption a{ display:block; float:left; font-weight:normal; height:10px; line-height:10px; padding:0 0 0 15px; text-align:center;text-decoration:none;}
+.menu_subcaption a#moveup{ background:url("images/images_all.jpg") no-repeat scroll -74px -53px transparent;}
+.menu_subcaption a#movedown{ background:url("images/images_all.jpg") no-repeat scroll -74px -72px transparent;}
+
+/*EXPORT*/
+.export_radio{ float: left; margin-right:12px;}
+.export_radio a { color:#000000; font-weight:bold; line-height:13px; padding:0; margin-right:15px;float: left;}
+/**/
+.export_radio1  { float: left; margin-right:12px;color:#000000; font-weight:bold; line-height:13px; padding:0;}
+.export_radio a span{ height:18px;width:20px;float: left;margin:1px 0px 0 0;}
+.export_radio a#export_pdf span{ background:url("images/spirites.gif") no-repeat scroll -169px 0 transparent}
+.export_radio a#export_xml span{background:url("images/spirites.gif") no-repeat scroll -129px 0 transparent}
+.export_radio a#export_xls span{background:url("images/spirites.gif") no-repeat scroll -149px 0 transparent}
+
+input.datepickerclass{ width: 100px;}
+a.print_link{ color:#FFFFFF;float:right;padding:2px 5px;text-decoration:none;}
+/*----------EXTRA CSS ENDS-----------*/
+
+/* CSS From Rajeev Sir*/
+.tbl_h1_bg1{font-family:arial;font-size:11px;font-weight:bold;color:#FFF;}
+.tbl_h1_bg1 td{background-color:#8b8b8b;}
+.tbl_h4_bg1 tr:nth-child(odd){background-color:#FFF;border:1px solid #e2e2e2;}
+/* ~~Reports~~ */
+.tbl_h4 tr:nth-child(-n+1){font-family:arial;font-size:11px;margin-top:10px;border:1px solid #e2e2e2;/*color:#FFF;it was causing white font on first row*/}
+/* date table End */
+.tbl_h1_bg{background-color: #787878;color: #FFFFFF;float: left;font-size: 14px;font-weight: bold;width: 100%;cursor:pointer;}
+.menu_data{margin:4px 0px 4px 0px;font-size:11px;font-weight:normal;color:#000; text-align:left;line-height:26px;letter-spacing: 1px;}
+/* ~~Reports~~ */
+.tbl_h4{font-family:arial;font-size:11px;border:1px solid #e2e2e2;background-color:#FFF;}
+.report_caption td {font-family:arial;font-size:11px;font-weight:normal;color:#FFF;background-color:#a4a4a4 !important; padding-left: 5px !important; /*The padding is given because when used with tbl_h4_bg1 there is no padding to td*/}
+.tbl_h3_bg4 {font-family:arial;font-size:11px;color:#3a3a3a;}
+.tbl_h3_bg4 td{background-color:#cbcbcb;}
+.tbl_h4_bg1  {font-family:arial;font-size:11px;font-weight:normal;background-color:#f4f4f4;border: 1px solid #E2E2E2;border-left: none;/*The left border was comming twice (one from td also)*/}
+.tbl_h4_bg1 td{ border-left: 1px solid #E2E2E2; border-bottom: 1px solid #E2E2E2;padding:2px;}
+.tbl_h4 td{border:1px solid #e2e2e2;border-width: 1px 1px 0 0; padding:2px;}
+.tbl_h4 a:link{font-family: arial;font-size: 11px;font-weight: normal;color: #09F;text-decoration:none;}
+.tbl_h4 a:hover{font-family: arial;font-size: 11px;font-weight: normal;color: #F00;text-decoration:none;}
+.tbl_h3_bg2 {font-family:arial;font-size:11px;color:#3a3a3a;}
+.tbl_h3_bg2 td{background-color:#cbcbcb;}
+.tbl_h3_bg3 {font-family:arial;font-size:11px;font-weight:bold;color:#F00;}
+.tbl_h3_bg3 td{background-color:#fff;}
+.tbl_h3_bg1{font-family:arial;font-size:11px;font-weight:bold;color:#FFF;}
+.tbl_h3_bg1 td{background-color:#a4a4a4;}
+.tbl_h4_bg1_read {font-family:arial;font-size:11px;font-weight:normal;background-color:#ffeaea;}
+.tbl_h4_bg1_blu {font-family:arial;font-size:11px;font-weight:normal;background-color:#ddecfd;}
+.tbl_h4_bg1_vol{font-family:arial;font-size:11px;font-weight:normal;background-color:#f3defe;}
+.biginput {border: 1px solid #818181;height:17px;width:690px;color:#000;font-weight:normal;font-size:12px;}
+.input_columns {border: 1px solid #818181;height:50px;*height:60px;width:200px;color:#000;font-weight:normal;font-size:12px;}
+.input_columns option { padding: 0 2px;}
+.tbl_h2_bg4 {font-family:arial;font-size:11px;color:#3a3a3a;font-weight:bold;background-color:#B5B5B5!important;}
+/* ~~End of Reports~~ */
+
+/*  Popup Forgot Password */
+.popup_bg {background-color:#EAEAEA;padding:3px;width:510px;}
+.popup_forgot_pwd {width:500px;border: 1px solid #9A9A9A;color: #6F6F6F;float: left;font-size: 12px;margin: 4px 0 10px;padding-bottom: 2px;}
+.popup_forgot_pwd_bg {background-color:#787878;float:left;height:20px;padding:0 0 0 7px;width:500px;}
+/*  Popup Forgot Password End */
+
+/* CSS From Rajeev Sir Ends*/
+/*~~~~~~~~~~ Entry Module Starts ~~~~~~~~~~~*/
+.collapsible_menu_tab li{ float: left;}
+/*~~~~~~~~~~ Entry Module Ends ~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~Server Combo Starts ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.custom_combo{background:#fff; border:1px solid #AAAAAA; font-family:arial;font-size:11px;position:absolute;padding: 0;z-index: 999;margin-top: 19px!important;*margin:22px 0 0 -275px; width: auto !important; min-width:275px;height: 190px;}
+.custom_combo option{background:none repeat scroll 0 0 #FFFFFF;border: 1px solid #ccc;border-top: none;padding:3px 5px 2px;}
+.custom_combo option.first{ background: red;font-size: 12px; font-weight: bold;}
+.custom_combo option:hover{ background: #ddd;}
+.down_cmb, .up_cmb,.down_cmbMS,.up_cmbMS {border:medium none;cursor:pointer;height:5px;margin:8px 0 8px -20px!important;width:20px!important;z-index:-100;float:left;}
+.down_cmbMS {}
+.down_cmb {background:url("images/down_server_combo.png") no-repeat scroll center center transparent;}
+.up_cmb { background: url("images/up_server_combo.png") no-repeat scroll center center transparent;}
+.up_cmbMS {}
+.cmbHide{ display: none;}
+.filterText {background:none repeat scroll 0 0 #fff;float:left;font:12px/1.4 Arial;padding:1px 2px;width:269px!important;}
+.filterTextDisabled {background:#CCCCCC;float:left;font:12px/1.4 Arial;padding:1px 2px;width:269px!important; color: white;}
+.reportLoadingImg{ border:1px solid #999999;padding: 5px; text-align: center; margin: 0 auto; clear: both; background: #fff; z-index: 9999; position: relative;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~Server Combo Ends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/**** function for the compulsory fields ****/
+.astriek {color:#F00;padding-right:5px;font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;}
+/**********/
+/*LOGIN Starts*/
+/*Taken from Paresh Varke*/
+.menuwhite{color:#FFFFFF;font-family:Arial;font-size:20px;font-weight:bold;}
+.menuwhite2{color:#FFFFFF;font-family:Arial;font-size:12px;font-weight:bold;}
+/*LOGIN Ends*/
+
+/*Add on 15-09-2011*/
+/*File browse html component*/
+.input_brows {border: 1px solid #818181;height:28px;width:190px;color:#000;font-weight:normal;font-size:12px;background-color:#FFFFFF;}
+.header_text {color: #FFFFFF;float: right;font-family: Arial,Helvetica,sans-serif;font-size: 16px;font-weight: bold;padding: 32px 15px 0 0;}
+/*File browse html component Ends*/
+/*Ends*/
+
+/****************NEW SERVERCOMBO***************/
+/*~~~~SS IMP-1~~~~*/
+/*In some cases the padding was overrdien by exterior class (.report_out select) */
+.custom_combo_showSS {background:#FFFFFF;float:left;font:12px/1.4 Arial;margin-left:4px;width:193px !important;z-index:1000;}
+.custom_combo_showSSWT {background:#FFFFFF;border:1px solid #818181;float:left;font:12px/1.4 Arial;width:277px !important;z-index:1000;}
+.custom_combo_showSS_Active {float:left;font:12px/1.4 Arial;height:auto;width:auto !important;min-width:193px !important;height:auto;z-index:1000;position:absolute;margin-left: 4px;}
+.custom_combo_showSSWT_Active {float:left;font:12px/1.4 Arial;height:auto;width:auto !important;min-width:277px !important;z-index:1000;position:absolute;margin-top: -10px;}
+
+option { padding: 2px; }
+option:hover { background: #ddd;}
+
+.custom_combo_showMS{background:#FFF;border:1px solid #AAAAAA;float:left;font:12px/1.4 Arial;width:277px !important;z-index:1000;height:56px;}
+.custom_combo_showMS_Active{background:#FFFFFF;border:1px solid #AAAAAA;float:left;font:12px/1.4 Arial;width:277px !important;z-index:1000;height:56px;}
+.down_cmb, .up_cmb {border:medium none;cursor:pointer;height:5px;margin:8px 0 8px -20px!important;width:20px!important;z-index:-100;float:left;}
+.down_cmb {background:url("images/down_server_combo.png") no-repeat scroll center center transparent;}
+.up_cmb { background: url("images/up_server_combo.png") no-repeat scroll center center transparent;}
+
+.filterTextSS {float:left;font:12px/1.4 Arial;height:auto;padding:2px;width:72px !important;height:14px }
+.custom_combo_low{ width: 91.66px !important;}
+.custom_combo_mid{ width: 137.5px !important;}
+/*~~~~~~*/
+/**********************************************/
+/********************jqgrid sub total class***************************************/
+.subTotalTD{ background:none repeat scroll 0 0 #A4A4A4;}
+.tdPadding {color:#FFFFFF;padding:2px;}
+.leftBorder {border-left: 1px solid #E2E2E2}
+.rightBorder {border-right: 1px solid #E2E2E2}
+/********************jqgrid sub total class-- end here***************************************/
+/*Old browser warning*/
+.brows_warining {margin:0px auto;background-color:#efeded;width:919px;height:80px;border:solid 1px #b3b2b2;padding:10px 40px;position:relative;}
+.brows_war {width:80%;background-color:#e1e1e1;border:solid 1px #b3b2b2;color:#4b4b4b;font-family:Arial, Helvetica, sans-serif;font-size:14px;height:73px; margin:0px auto;text-align:center;padding:0 0 0 80px;}
+.brows_icon {background:url(images/brows_updating_icon.jpg) no-repeat;float:left;position:absolute;width:83px;height:75px;top:10px;left:55px;}
+.brows_war font {color:#4B4B4B;float:none;font-size:18px;}
+.brows_close {position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;}
+.brows_close a{background:url(images/close_icon.jpg) no-repeat;float:right;position:absolute;width:18px;height:18px;top:5px;right:5px;}
+.firefox_img {background:url("images/firefox_iocn.jpg") no-repeat scroll 0 0 transparent;float:right;height:68px;width:57px;}
+
+/*Used in Group Mailing Print Page (25-11-2011)*/
+.Labelprint { font-family: Arial;font-size: 11px;color: #000000;border: thin dotted #999999;}
+/*Class related to new report design(100%)*/
+.html-main-report { border: 1px solid #9A9A9A;}
+.grid-main-report { background:none repeat scroll 0 0 #EAEAEA;border:1px solid #9A9A9A;color:#6F6F6F;font-size:12px;margin:0 0 10px;float:left;padding:0;}
+.report-main-content { padding:0 1px 0 0;}
+.output-div { position: absolute; left: 45%;top: 45%}
+/*Login Manager*/
+/*These class where left on the pages during the devlopemnt of login manager.*/
+.bodytxt{ color:#000000;font-family:Arial,sans-serif;font-size:12px;line-height:17px;text-align:justify;}
+.RedFonts{color:#FF0000;font-family:Arial,Helvetica;font-size:12px;font-weight:bold;}
+.bodytxt ul{ list-style-type:disc;padding-left:25px;}
+.bodytxt a, .bodytxt a:visited{color: #000; text-decoration: none; font-size: 10px; font-weight: bold;}
+.a:hover{text-decoration: none}
+/*GROUP MANAGEMENT*/
+.add-remove-button {color:#000000;float:none;padding:0;margin: 0;font-size: 11px;}
+.fullwidth { width:100%; margin-top: 5px; float: left;text-align:left;}
+.fullwidthLeft { width:100%; float: left; margin: 5px 0 ; text-align: left;}
+/**/
+.cursor-pointer { cursor: pointer;display:block;}
+/*FOR MONTH & YEAR COMBO*/
+.date_input_box { width: auto !important; float: left;background: #fff;margin-right:2px;}
+.date_input_box_small {background:#FFF;float:left;font-family:Tahoma;font-size:10px;height:15px;margin-right:2px;width:auto !important;}
+.date_month_year {background:#FFF;float: left;font-family: arial;font-size: 12px;height: 18px;margin-right: 2px;width: auto !important;}
+/*MANAGE LOCATIONS*/
+.rptlink { color: #0000ff; text-decoration: none;}
+a.rptlink:hover{ color: #ff0000;}
+.menu_subcaption_new {background:#F4F4F4;border: none !important;border-left:1px solid #E2E2E2 !important;border-top:1px solid #E2E2E2 !important;color:#000000;font-size:11px;font-weight:bold;letter-spacing:1px;line-height:26px;margin:4px 0;text-align:left;}
+.menu_subcaption_new td {line-height:22px;border: none !important;border-bottom:1px solid #E2E2E2 !important;border-right:1px solid #E2E2E2 !important;padding:0 0 0 5px !important;}
+.menu_subcaption_new .report_caption td {font-weight: bold;}
+.report_content_caption  {width:40%;}
+.report_content_value  {width:60%;}
+.menu_button { margin: 5px 0;}
+/*Ajax Loading*/
+.varLoading {  background: url("images/nj_loader.gif") no-repeat scroll 12px 5px #FFF;border: 1px solid #CCC;clear: both;height: 65px;margin: 5px auto;padding: 5px;position: relative;width: 65px;}
+.varLoading span {bottom: 3px;font-weight: bold;left: 6px;position: absolute;color: #000088;}
+.cmbLoading {  background: url("images/nj_loader.gif") no-repeat scroll 12px 5px #FFF;border: 1px solid #CCC;clear: both;height: 65px;margin: 5px auto;padding: 5px;position: fixed;width: 65px; left: 45%; top: 45%;z-index: 99999;}
+.cmbLoading span {bottom: 3px;font-weight: bold;left: 6px;position: absolute;color: #000088;}
+.varProblem {width:100%;float:left;color:#8e0606;text-align:center;width:100%;}
+
+/* new header and footer added by Ashish Sharma on 24-04-2012 */
+.new_header .logo_bg { background:url(images/top_bg.jpg) repeat-x;width:100%;height:99px;}
+.new_header .logo {float:left;height:99px;margin-left:15px;background: none;}
+.new_header .group_logo {background:url("images/njwealth_logo_new.gif") no-repeat scroll 0 0 transparent;float:left;height:98px;width:348px;margin: 0;}
+.logo_bg { background:url(images/top_bg.jpg) repeat-x;width:100%;height:99px;}
+.logo {background-color:#FFF;float:left;height:99px;margin-left:15px;}
+.group_logo {background:url("images/njwealth_logo.gif") no-repeat scroll 0 0 transparent;float:left;height:60px;margin:19px;width:158px;}
+/*Change for aneri*/
+#isGlobalPdesk .group_logo {background:url("images/global_logo.gif") no-repeat scroll 0 0 transparent;}
+
+#footer {background-color:#DDD;color:#707070;float:left;font-family:Arial,Helvetica,sans-serif;font-size:11px;height:45px;padding:10px 0 0;text-align:center;width:100%;}
+#footer span {color:#000;}
+#foot {	font-family:Arial, Helvetica, sans-serif;width:100%;float:left;color:#FFFFFF;height:30px;background:#DD001F;}
+.all_Rights { font-family:Arial, Helvetica, sans-serif;font-size:12px;width:60%;color:#FFFFFF;float:left;line-height:30px;text-indent:10px;}
+.powered_by { font-family:Arial, Helvetica, sans-serif;	width:30%;font-size:12px;float:right;text-align:right;color:#FFFFFF;padding:0px 15px 0px  0px;line-height:30px;text-indent:10px;}
+.basictable { color: #000; font-size: 12px; font-weight: normal;}
+
+/*---- New Primary Menu Starts-----*/
+.primarymenu{border-bottom:1px solid #AAAAAA;border-top:1px solid #AAAAAA;float:left;position:relative;width:100%;float:left;z-index:9999;}
+.primarymenu a img{ border:none; float:right;}
+.primarymenu ul {padding:5px 0;float:left;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;list-style-type:none;background:#FFF;width:100%;}
+.primarymenu ul li {border:1px solid #fff;margin:0 10px;float:left;position:relative;}
+.primarymenu ul li a {background:#fff;color:#000000;display:block;float:left;font-size:11px;font-weight:bold;margin:0;padding:2px 5px;text-align:left;text-decoration:none;}
+.primarymenu ul li a img {float: none;margin-left: 3px;}
+/*.primarymenu ul li a:visited{color:#333;}*/
+.primarymenu ul li:hover{border:1px solid #999;border-bottom:1px solid #fff;}
+.primarymenu ul li a:hover{color:#F00;}
+/* LEVEL 2 */
+.primarymenu ul li:hover ul{left:-1px;display: block;}
+.primarymenu ul ul{left:-9999px;margin:0;display: none;}
+.primarymenu ul ul.level2{background:#fff;border:1px solid #999;position:absolute;top:20px;width:440px;z-index:9999}
+.primarymenu ul li:hover ul.last{right:-1px;left:auto;}
+.primarymenu ul li:hover ul.single-column {width:217px !important;}
+.primarymenu ul ul li.floatright{float:right !important}
+.primarymenu ul ul li{background:#fff;float:left;margin:0;padding:0 5px 0 10px;width:200px;}
+.primarymenu ul ul li:hover{border:1px solid #fff;margin:0;}
+.primarymenu ul ul li a{background:#fff;border-bottom:1px solid #999 !important;float:left;font-size:13px;font-weight:bold;padding:2px 1px;width:100%;}
+.primarymenu ul ul li a:hover{border:none;}
+.primarymenu ul ul ul{display:block;width:200px;}
+.primarymenu ul ul ul li{width:190px; padding-left:0;}
+.primarymenu ul ul ul li a{font-weight:normal;font-size:11px;border:none !important;position:relative;z-index:99999;}
+.primarymenu ul ul ul ul,.primarymenu ul ul ul ul li,.primarymenu ul ul ul ul li a{width:170px;}
+.primarymenu ul ul ul ul li a{padding-left:15px; background: url("images/bullet_disc.png") no-repeat 5px 6px;}
+.submenuimg {background: url("images/menu_bottom.gif") no-repeat scroll 0 0 transparent;float: right;height: 7px;margin-top: 4px;width: 7px;}
+.hide {display:none !important;}
+.display {display:block !important;}
+.menu_plus,.menu_minus {display:block;float:left;height:10px;margin:3px 5px 3px 0;width:8px;}
+.menu_plus {background:url("images/menu_plus.gif") no-repeat scroll 0 0 transparent;}
+.menu_minus {background:url("images/menu_minus.gif") no-repeat scroll 0 0 transparent;}
+/*---- New Primary Menu Ends-----*/
+/*---- New Common Header Script -----*/
+.clogo_bg {background: url(images/top_bg_new.jpg) repeat-x scroll 0 0 transparent; float: left; height: 80px; width:100%;}
+.clogo {float: left;height: 80px;margin-left: 15px;width: 195px;background: #fff;}
+.clogo img{padding: 5px 56px;}
+.hadertext {float:left; font-size:20px; color:#FFF; margin:30px  0px 0px 10px;}
+#login {float:right; width:200px; margin:35px 15px 0px 0px; font-size:14px; font-weight:bold; color:#000; text-align:right;}
+.loginbg {width:200px; background-color:#0C0; height:200px;}
+.loginbox {float:left; width:310px;height: 94px;}
+.loginbox img {width:80px; height:80px; float:left; padding:0px; margin:6px; border:solid 1px #c1c1c1;}
+.welcome {font-size:13px; font-weight:bold; }
+.welcome, .username, .emailid  {float:left; width:210px; color:#000; margin-top:5px; }
+.username {font-size:15px; font-weight:bold; }
+.emailid { font-size:12px; color:#0044c2;}
+.emailid a {color:#0044c2; text-decoration:none;}
+.emailid a:hover {color:#000;}
+.loginbottom {background:url(images/loginbg.jpg) repeat-x #e8e8e8; width:305px; float:left; padding:15px 5px 5px 5px; }
+.user {width:50%; float:left; font-weight:bold; color:#646363; margin:4px 0px;padding: 0;}
+.user a {color:#646363; font-weight:bold; font-size:13px; text-decoration:none; }
+.user a:hover {color:#000;}
+.user img {float:left; width:34px; height:24px; margin-right:5px; margin-top:-3px;}
+
+#topnav {float: left;font-size: 13px;font-weight: bold;line-height: 23px;padding: 30px 0 0;position: absolute;right: 0;}
+#topnav a.signin {padding:4px 6px 6px;text-decoration:none;font-weight:bold;color:#fff;background:url("images/loginarrow.jpg") no-repeat 0 0;*background-position:0 3px!important;}
+#topnav a.signin:hover {background:url("images/loginarrow_hover.jpg") no-repeat 0 0;*background-position:0 3px!important;}
+a.signin {position:relative;margin-left:3px;}
+a.signin span {padding:4px 16px 6px;}
+#topnav a.menu-open {color:#666!important;outline:none;padding:4px 6px 6px;}
+#small_signup {display:inline;float:none;line-height:23px;margin:25px 0 0;width:170px;}
+a.signin.menu-open span {color:#789;}
+#signin_menu {display:none;background-color:#FFF;position:absolute;width:315px;z-index:99999;border:1px solid #999;text-align:left;padding:0px;top: 50px; right: 0px;margin-right: 29px;color:#789;}
+.tipsy {opacity:.8;filter:alpha(opacity=80);background-repeat:no-repeat;padding:5px;}
+.tipsy-inner {padding:8px 8px;max-width:200px;font-size:11px;border-radius:4px;background-color:#000;color:white;text-align:left;}
+.homeLink {color: #444444; float: right; position: absolute; right: 20px; text-decoration: none;}
+.homeLink:hover {color: #000;}
+.signinMenuList{height: 23px;float: left;}
+/*---- New Common Header Script Ends -----*/
+/* Used when used dhx_web*/
+div.gridbox_dhx_web table.hdr td div.hdrcell {padding: 0 5px !important;text-align: center;}
+.content div.gridbox_dhx_web table.obj tr td {border-bottom: 1px solid #E2E2E2;border-right: 1px solid #E2E2E2;font: 11px/1.4 Arial;color: #222;padding: 2px;}
+.content div.gridbox_dhx_web {margin: 1px auto !important;}
+.content div.gridbox_dhx_web table.hdr td {background: none repeat scroll 0 0 #A4A4A4;border-bottom: 1px solid #E2E2E2;border-right: 1px solid #E2E2E2;color: #FFF;font: 11px/1.4 Arial;padding: 5px 0;}
+.hdrcell input[type=checkbox]{width: auto; border: none;/*To solve the prob in ie in grid*/}
+/*ends*/
+/*to set the style for grand total*/
+div.gridbox div.ftr td {background: #A4A4A4 !important;color: #FFF;font-family: arial;font-size: 11px!important; font-weight: bold !important; font-style: normal !important;}
+
+.dhtml-main-report {border: none;clear: both;margin: 0 auto;}
+a#hide_show_pivot {background: none repeat scroll 0 0 #EEE;border: 1px solid #333;color: #000;float: left;font-size: 12px;margin-right: 5px;text-decoration: none;width: 90px;}
+a#hide_show_pivot span {float: left;height: 19px;width: 17px;}
+.show_pivot span{background: url("images/ui-icons_888888_256x240.png") no-repeat scroll 0 -190px transparent;}
+.hide_pivot span{background: url("images/ui-icons_888888_256x240.png") no-repeat scroll -17px -190px transparent;}
+/*Requested by Ruju*/
+.des_coll_menu{background-color: #747474;float:left;width: 100%;}
+.deshboard_coll_menuleft{border: 1px solid #D4D4D4;float:left;height:auto;margin:10px;width:470px;}
+.deshboard_coll_menuright{border: 1px solid #D4D4D4;float:right;height:auto;margin:10px;width:470px;}
+.deshboard_coll_box{float:left;height:auto;width:100%;}
+.deshbox{float:left;padding:1%;width:98%;}
+#deshboard_content{margin:0 auto;height:auto;width:985px;}
+/*Requested by Ruju ends*/
+/*Requested by ADITI R VYAS*/
+.white{color: white;font-size: 12px;text-decoration: none;}
+a.white:hover {color: #FF0000;}
+/*Requested by ADITI R VYAS ends*/
+
+/*------DhtmlxCombo Changes------*/
+.dhx_combo_img{width:13px !important;height:18px !important;}
+.dhx_combo_box{height:18px !important;_height:20px !important;}
+.dhx_combo_box.dhx_terrace .dhx_combo_img{top: 0;}
+.dhx_combo_box.dhx_terrace{height:30px;line-height:28px;_height:32px;}
+.dhx_combo_list.dhx_terrace_list div{padding:8px 8px;}
+.dhx_combo_box.dhx_terrace .dhx_combo_input {height:30px;line-height:30px;font-family:Arial;padding:0px 0px 0px 8px;}
+.dhx_combo_box.dhx_web .dhx_combo_input {height:18px;line-height:18px;}
+
+/*------ dhtmlxForm ------*/
+.dhxform_obj_dhx_web .dhx_file_uploader div.dhx_upload_files div.dhx_file_param {font-size: 10px !important;}
+.dhxform_obj_dhx_web .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls div.dhx_file_uploader_button.button_info {font-size: 10px !important;color: #646464 !important;}
+.input_columns_visible_extension {border: 1px solid #818181;height:210px;*height:60px;width:200px;color:#000;font-weight:normal;font-size:12px;}
+
+/*------ Enable text selection in dhtmlx grid ------*/
+div.gridbox table.obj td{-moz-user-select:text !important;}
+div.gridbox table.hdr td {    -moz-user-select:text !important;    -moz-user-select:text !important;}
+/* CSS for space between text like partner and combo in DDSD */
+.NewfilterTextSS {float:left;font:12px/1.4 Arial;height:15px;padding:2px;width:271px !important;margin-bottom: 5px;color:#A0A0A0;}
+.menu_subcaption_border .report_content_form{font-weight:initial;}
+.menu_subcaption_border{padding: 0 !important;border-style: solid;border-width: 0px 0px 1px 1px;border-color:#9A9A9A;}
+.menu_subcaption_border td{border-color:#9A9A9A;border-style:solid;border-width:1px 1px 0px 0px;padding: 0px 2px 0px 4px;}

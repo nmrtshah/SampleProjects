@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+     <context:annotation-config/>
+     <context:component-scan base-package="com.finlogic"/>
+     <mvc:annotation-driven/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="login.fin">loginController</prop>
+                <prop key="logout.fin">logoutController</prop>
+                <prop key="welcome.fin">welcomeController</prop>
+                <prop key="connaudit.fin">connAuditController</prop>
+                <prop key="reportgenerator.fin">reportGeneratorController</prop>
+                <prop key="dataimport.fin">dataImportController</prop>
+                <prop key="mastergenerator.fin">MasterGeneratorController</prop>
+                <prop key="mastergeneratorV2.fin">MasterGeneratorV2Controller</prop>
+                <prop key="dataexport.fin">dataExportController</prop>
+                <prop key="jquerydemo.fin">jqueryDemoController</prop>
+                <prop key="serverAccessAuditReport.fin">serverAccessAuditReport</prop>
+                <prop key="repgenv2.fin">finreportController</prop>
+                <prop key="linkchecker.fin">linkchecker</prop>
+                <prop key="scriptgen.fin">scriptgen</prop>
+		<prop key="mobapps.fin">mobappsController</prop>
+		<prop key="finstudiomur.fin">finstudioMUR</prop>
+		<prop key="mstgenv2.fin">finmasterController</prop>
+		<prop key="servicelist.fin">commonController</prop>
+		<prop key="webservice.fin">webserviceController</prop>
+		<prop key="oracleToMySql.fin">oracleToMySql</prop>
+                <prop key="add_finfiletransfer.fin">finFileTransfer</prop>
+                <prop key="view_finfiletransfer.fin">finFileTransfer</prop>
+		<prop key="repgenv3.fin">finDhtmlReport</prop>
+		<prop key="webservicegen.fin">webserviceController</prop>
+		<prop key="findatareqexec.fin">finDataReqExecController</prop>
+		<prop key="exec_findatareqexec.fin">finDataReqExecController</prop>
+		<prop key="dbmdi.fin">DBMetadataController</prop>
+		<prop key="finstudiostatistics.fin">finstatisticsController</prop>
+		<prop key="dbmc.fin">dbmComparatorController</prop>
+		<prop key="filedirar.fin">finserverentry</prop>
+		<prop key="filedirarexe.fin">finserverentry</prop>
+		<prop key="webservicedoc.fin">webservicedoc</prop>
+
+		<prop key="generatepdfmodule.fin">generatePdfController</prop>
+		<prop key="generatepdfClientAdd.fin">generatePdfController</prop>
+		<prop key="generatepdf.fin">generatePdfController</prop>
+		<prop key="generatepdfReport.fin">generatePdfController</prop>
+		<prop key="dbobjversionrpt.fin">DBObjVersionRptController</prop>
+		<prop key="blockmodules.fin">blockModulesController</prop>
+		<prop key="blockmodulesAdd.fin">blockModulesController</prop>
+		<prop key="blockmodulesRpt.fin">blockModulesController</prop>
+		<prop key="blockmodulesAuth.fin">blockModulesController</prop>
+		<prop key="etljoblist.fin">ETLJobListController</prop>
+		<prop key="etljobmaster.fin">ETLJobListController</prop>
+           </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <bean id = "methodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName">
+            <value>cmdAction</value>
+        </property>
+        <property name="defaultMethodName">
+            <value>defaultMethod</value>
+        </property>
+    </bean>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+
+    <bean name="loginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="login" p:supportedMethods="POST"/>
+
+    <bean name="logoutController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="logout" />
+
+    <bean id="welcomeController" class="com.finlogic.apps.finstudio.controller.WelcomeController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="connAuditController" class="com.finlogic.apps.finstudio.controller.ConnAuditController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="reportGeneratorController" class="com.finlogic.apps.finstudio.controller.ReportGeneratorController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+	<bean id="finmasterController" class="com.finlogic.apps.finstudio.finmaster.FinMasterController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="dataImportController" class="com.finlogic.apps.finstudio.controller.DataImportController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="MasterGeneratorController" class="com.finlogic.apps.finstudio.controller.MasterGeneratorController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="MasterGeneratorV2Controller" class="com.finlogic.apps.finstudio.controller.MasterGeneratorV2Controller">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="dataExportController" class="com.finlogic.apps.finstudio.controller.DataExportController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="jqueryDemoController" class="com.finlogic.apps.finstudio.controller.JQueryDemoController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="serverAccessAuditReport" class="com.finlogic.apps.finstudio.controller.ServerAccessAuditReportController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="finreportController" class="com.finlogic.apps.finstudio.finreport.FinReportController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="linkchecker"
+          class="com.finlogic.apps.finstudio.linkchecker.LinkCheckerController"/>
+
+    <bean id="scriptgen" class="com.finlogic.apps.wfms2.scriptgen.ScriptGenController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="finstudioMUR" class="com.finlogic.apps.finstudio.finstudiomur.FinstudiomurController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="commonController" class="com.finlogic.apps.finstudio.controller.CommonController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="mobappsController" class="com.finlogic.apps.finstudio.mobappsgeneration.MobAppsController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>	
+
+    <bean id="webserviceController" class="com.finlogic.apps.finstudio.webservice.WebServiceController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="oracleToMySql" class="com.finlogic.apps.finstudio.oracletomysql.OracToMysqlController">
+	<property name="methodNameResolver">
+		<ref bean="methodNameResolver"/>
+	</property>
+    </bean>
+
+    <bean id="finFileTransfer" class="com.finlogic.apps.finstudio.finfiletransfer.FinfiletransferController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="finDhtmlReport" class="com.finlogic.apps.finstudio.findhtmlreport.FinDhtmlReportController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="finDataReqExecController" class="com.finlogic.apps.finstudio.findatareqexecutor.FinDataReqExecutorController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="DBMetadataController" class="com.finlogic.apps.finstudio.dbmetadatainspector.DBMetadataController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+    <bean id="finstatisticsController" class="com.finlogic.apps.finstudio.finstudiostatistics.FinstudiostatisticsController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="dbmComparatorController" class="com.finlogic.apps.finstudio.dbmcomparator.DBMcomparatorController">
+	<property name="methodNameResolver">
+	   <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="finserverentry" class="com.finlogic.apps.finstudio.filedirautorequest.FileDirAutoRequestController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean id="webservicedoc" class="com.finlogic.apps.finstudio.webservicedoc.WebServiceDocController">
+        <property name="methodNameResolver">
+            <ref bean="methodNameResolver"/>
+        </property>
+    </bean>
+
+<bean id="generatePdfController" class="com.finlogic.apps.finstudio.licencegenerate.GenerateLicencePdfController">
+	<property name="methodNameResolver">
+    		<ref bean="methodNameResolver"/>
+	</property>
+</bean>
+	<bean name="DBObjVersionRptController" class="com.finlogic.apps.finstudio.dbobjectversionrpt.DBObjVersionRptController">
+		<property name="methodNameResolver">
+			<ref bean="methodNameResolver" />
+		</property>
+	</bean>
+
+<bean id="blockModulesController" class="com.finlogic.apps.finstudio.blockmodules.BlockModulesController">
+	<property name="methodNameResolver">
+    		<ref bean="methodNameResolver"/>
+	</property>
+</bean>
+
+<bean name="ETLJobListController" class="com.finlogic.apps.finstudio.ETLJobList.ETLJobListController" >
+        	<property name="methodNameResolver">
+           	 <ref bean="methodNameResolver" />
+       	        </property>
+   	 </bean>
+</beans>

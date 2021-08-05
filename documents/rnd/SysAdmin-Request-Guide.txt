@@ -1,0 +1,48 @@
+To Avail support form System Admin Team for SVN Rights / Samba Rights / Cron Add-Remove
+
+Send Mail on sysadmin@njgroup.in.
+
+Subject should be as per given below ( from 1 to 3 )
+
+1) SVN Ldap Rights
+
+:- Auth Person : Dev Sr. TL and Above (Send Mail to Dev Sr. TL and Above only, they will forward to sysadmin@njgroup.in)
+
+- Provide SVN URL.
+- Provide ACL User Name.
+
+TAT - 2 working days.
+
+2) Samba Share Rights
+
+:- Auth Person : Dev Sr. TL and Above for Dev and Test Server (Send Mail to Dev Sr. TL and Above only, they will forward to sysadmin@njgroup.in)
+
+:- Auth Person : Kinjal Sir for Production Server (Send Mail to Kinjal Sir and Above only, they will forward to sysadmin@njgroup.in)
+
+- Provide Abosolute Path of Folder.
+- Provide ACL User Name.
+- Server Name
+- Writeable - ( Provide Yes or No )
+
+Note : As there is SVN on development server, only readonly share can be provided, if required in special case.
+
+TAT - 2 working days.
+
+3) Cron Add / Remove
+
+:- Auth Person : Dev Sr. TL and Above (Send Mail to Dev Sr. TL and Above only, they will forward to sysadmin@njgroup.in)
+
+SrNo. 	Server Name 	Effective Date 	Owner 	Owner's Superior 	Description 	Command		Frequency
+
+Note :- 
+
+--> Provided command should be testable before configuration. Take command line parameter like "test" for the same and print "Success" message on promt if value test found in logic.
+
+For e.g :
+
+#/bin/su tomcat -c '/usr/java/default/bin/java -cp /opt/apache-tomcat1/lib/*:/opt/apache-tomcat1/webapps/finstudio/WEB-INF/classes com.finlogic.util.cron.FileDirAutoRequestCron test'
+Success
+
+--> Above example is for testing only, we will configure cron witohut test parameter, so prepare your logic accordigly. If command doesn't support the same, ticket will be rejected.
+
+TAT - 1 working days.

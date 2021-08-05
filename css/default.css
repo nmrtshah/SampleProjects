@@ -1,0 +1,11 @@
+.demoform {max-width: 800px;padding: 15px;margin: 0 auto;}
+.heading{font-size:60px !important}
+th{text-align:center}
+.list{background-color:#6F6F6F;color:white;min-height:50px;min-width:50px;
+     max-height:50px;max-width:50px;text-align:center;font-weight:bolder;font-size:25px}
+.subject{background-color:white;min-width:95%;padding-left:10px}
+.hidden{display:none;border: #000000 solid 1px !important}
+.example{padding-bottom:15px;padding-top:15px;padding-left:50px;float:left;width:600px;font-size:14px}
+.code{padding-bottom:15px;padding-top:15px;}
+li{font-size:16px;}
+.check{float:left}

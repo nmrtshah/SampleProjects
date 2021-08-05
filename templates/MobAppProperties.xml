@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<platforms>
+    <android>
+        <template>#TOMCAT_PATH/webapps/finstudio/templates/Android</template>
+        <webroot>/assets/www/</webroot>
+	<params>
+            <appName>
+                <file>strings.xml</file>
+                <pattern>&lt;string name="app_name"&gt;#APP_NAME&lt;/string&gt;</pattern>
+            </appName>
+            <version>
+                <file>AndroidManifest.xml</file>
+                <pattern>android:versionName="#VERSION"</pattern>
+            </version>
+            <packageName>
+                <file>MobAppActivity.java</file>
+                <pattern>package #PACK_NAME;</pattern>
+            </packageName>
+            <packageName>
+                <file>AndroidManifest.xml</file>
+                <pattern>package="#PACK_NAME"</pattern>
+            </packageName>
+            <welcomeFile>
+                <file>MobAppActivity.java</file>
+                <pattern>super.loadUrl("file:///android_asset/www/finhtml/#WELCOME_FILE");</pattern>
+            </welcomeFile>
+	</params>
+        <commands>
+            <command>#ANDROID_PATH/android update project --target 1 --name #APP_NAME --path #TOMCAT_PATH/webapps/finstudio/generated/#APP_PATH</command>
+            <command>cd #TOMCAT_PATH/webapps/finstudio/generated/#APP_PATH;#ANT_PATH/ant release</command>
+            <command>/usr/java/jdk1.6.0_13/bin/jarsigner -keystore #TOMCAT_PATH/webapps/finstudio/applet/finlogicappletkey.keystore -storepass keystorefinlogic -signedjar #TOMCAT_PATH/webapps/finstudio/generated/#APP_PATH/bin/#APP_NAME.apk #TOMCAT_PATH/webapps/finstudio/generated/#APP_PATH/bin/#APP_NAME-release-unsigned.apk FinlogicApplet</command>
+		<command>/usr/java/jdk1.6.0_13/bin/jarsigner -verify #TOMCAT_PATH/webapps/finstudio/generated/#APP_PATH/bin/#APP_NAME.apk</command>
+        </commands>
+	<output>generated/#APP_PATH/bin/#APP_NAME.apk</output>
+    </android>
+
+    <blackberry>
+        <template>#TOMCAT_PATH/webapps/finstudio/templates/BlackBerry</template>
+        <webroot>/www/</webroot>
+        <params>
+	    <appName>
+                <file>config.xml</file>
+                <pattern>&lt;name&gt;#APP_NAME&lt;/name&gt;</pattern>
+            </appName>
+	    <appName>
+                <file>config.xml</file>
+                <pattern>&lt;description&gt;#APP_NAME&lt;/description&gt;</pattern>
+            </appName>
+            <version>
+                <file>config.xml</file>
+                <pattern>version="#VERSION"</pattern>
+            </version>
+            <welcomeFile>
+                <file>config.xml</file>
+                <pattern>content src="finhtml/#WELCOME_FILE"</pattern>
+            </welcomeFile>
+        </params>
+        <commands>
+        </commands>
+	<output></output>
+    </blackberry>
+
+    <symbian>
+        <template>#TOMCAT_PATH/webapps/finstudio/templates/Symbian</template>
+        <webroot>/Symbian/framework/www/</webroot>
+        <params>
+            <appName>
+                <file>Info.plist</file>
+                <pattern>&lt;string&gt;#APP_NAME&lt;/string&gt;</pattern>
+            </appName>
+            <version>
+                <file>Info.plist</file>
+                <pattern>&lt;string&gt;#VERSION&lt;/string&gt;</pattern>
+            </version>
+	    <packageName>
+                <file>Info.plist</file>
+                <pattern>&lt;string&gt;#PACK_NAME&lt;/string&gt;</pattern>
+            </packageName>
+            <welcomeFile>
+                <file>index.html</file>
+                <pattern>src="finhtml/#WELCOME_FILE"</pattern>
+            </welcomeFile>
+        </params>
+        <commands>
+		<command>cd #TOMCAT_PATH/webapps/finstudio/generated/#APP_PATH/Symbian;sh Makefile 2> error.txt;rm -f error.txt</command>
+        </commands>
+	<output>generated/#APP_PATH/Symbian/framework/app.wgz</output>
+    </symbian>
+
+</platforms>

@@ -1,0 +1,194 @@
+*html{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family : 'Montserrat', sans-serif;
+    font-size   : 16px;
+    line-height : 26px;
+    color       : #fff;
+    font-weight : 400;
+    background: #333;
+    margin: 0;
+    }
+
+/*--------------------------------------
+ * TYPOGRAPHY  
+ *--------------------------------------*/
+
+h1 {
+    font-size   : 40px;
+    line-height: 1;
+    margin: 0
+    }
+h2{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/*--------------------------------------
+ * LINK STYLE 
+ *-------------------------------------- */
+a {
+    color: #fff;
+    text-decoration : none;
+    }
+
+
+a,
+a:active,
+a:focus,
+a:active {
+    text-decoration : none;
+    outline         : none
+    }
+
+a:hover,
+a:focus {
+    text-decoration : none;
+    }
+
+
+/*-------------------------------------------------------------
+ * Main Wraper
+ *-------------------------------------------------------------*/
+ .wraper{
+    padding: 4%;
+    color: #fff;
+}
+
+
+/*-------------------------------------------------------------
+ * HEADER
+ *-------------------------------------------------------------*/
+.header{
+    margin-bottom: 50px;
+}
+
+.logostyle
+{
+max-width:100%;height:auto;
+}
+
+/*------------------
+ * Video Background
+ *------------------*/
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg::before{
+    position: absolute;
+    content: "";
+    background: rgba(0, 0, 0, 0.7);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 160%;
+    top: -50%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 160%;
+    top: -50%;  
+}
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('http://apps.njtechdesk.com/finstudio/documents/blockmodule/block-full-bg.jpg') center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+
+/*-----------------------
+ * Footer
+ *-----------------------*/
+.footer{
+    position: relative;
+    display: block;
+    bottom: auto;
+    left: auto;
+}
+
+
+/*social-links*/
+.social-links ul{
+    margin: 0;
+    padding: 0;
+}
+
+.social-links li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+.social-links li a{
+    display: block;
+    font-size: 18px;
+    color: rgba(255,255,255,.3);
+    text-align: center;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.social-links li a:hover {
+    color: #fff;
+}
+
+
+/*copyright*/
+.copyright{
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+    padding: 0;
+    line-height: 1;
+}
+.copyrightstyle{
+	position: fixed; left: 0; bottom: 0; width: 100%; background-color: grey; color: white; text-align: center;
+}
+
+.copyright a{
+    color: white;
+    text-decoration    : none;
+    border-bottom: 1px dotted rgba(255,255,255, 0.3);
+}
+.copyright li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.copyright li:last-child{
+    border-left: 1px solid white;
+    padding-left: 12px;
+}

@@ -1,0 +1,480 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.finlogic.util.cron;
+
+import com.finlogic.util.Logger;
+import com.finlogic.util.persistence.SQLUtility;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.attribute.GroupPrincipal;
+import java.nio.file.attribute.PosixFileAttributes;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
+import java.nio.file.attribute.UserPrincipal;
+import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import com.finlogic.util.SBCommonOperation;
+
+/**
+ *
+ * @author njuser
+ */
+public class FileDirAutoRequestCron
+{
+
+    private static final SQLUtility sqlUtility = new SQLUtility();
+    private static final String FINALIAS = "finstudio_dbaudit_common";
+    private static final String serverNames = "x,devweb1.nj,devweb2.nj,devweb3.nj,devweb4.nj,testweb1.nj,testweb2.nj,testweb3.nj,testweb4.nj,howeb1.nj,howeb2.nj,howeb3.nj,howeb4.nj,x";
+    private static final String serverNamesRep = "x,devweb1rep.nj,devweb2rep.nj,devweb3rep.nj,testweb1rep.nj,testweb2rep.nj,testweb3rep.nj,testweb4rep.nj,howeb1rep.nj,howeb2rep.nj,howeb3rep.nj,howeb4rep.nj,x";
+
+    public static void main(String[] args)
+    {
+        try
+        {
+            org.apache.log4j.Logger.getRootLogger().setLevel(org.apache.log4j.Level.ERROR);
+ 
+//            /devweb1.nj, testweb1.nj
+            // Getting Servername
+            //testweb3
+            String server = getServerName();
+            String retrieveRecords = " SELECT SRNO, PATH, SERVER_NAME, PROCESS FROM FILEDIR_AUTO_REQUEST WHERE STATUS = 'authorized' AND (SERVER_NAME = '" + server + "')";
+            if (server.contains("web3.nj"))
+            {
+                //devweb3 -> devsb1.nj, testweb3 -> testsb1.nj
+                if (server.equals("howeb3.nj"))
+                {
+                    retrieveRecords = retrieveRecords.replace(")", " OR (SERVER_NAME like '%sb1.nj' AND PROCESS = 'GetFile'))");
+                }
+                else
+                {
+                    retrieveRecords = retrieveRecords.replace(")", " OR SERVER_NAME = '" + server.substring(0, server.indexOf("web")).concat("sb1.nj") + "') AND PROCESS != 'GetFile'");
+
+                }
+            }
+
+            //Getting Resultset
+            List list = sqlUtility.getList(FINALIAS, retrieveRecords);
+            //Create folders
+            if (list.size() > 0)
+            {
+Logger.DataLogger("howeb3");
+                for (Object row : list)
+                {
+                    Map m = (Map) row;
+
+                    int SRNO = (Integer) m.get("SRNO");
+                    String PROCESS = (String) m.get("PROCESS");
+                    String PATH = (String) m.get("PATH");
+
+                    if (!isValidPath(PATH))
+                    {
+                        sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'invalid path' WHERE SRNO = " + SRNO);
+                        Logger.DataLogger("Path is invalid : " + PATH);
+                        continue;
+                    }
+                    if (!checkRep(m))
+                    {
+                        sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'invalid path for replication server' WHERE SRNO = " + SRNO);
+                        Logger.DataLogger("Path is invalid : " + PATH);
+                        continue;
+                    }
+                    if ("Create".equals(PROCESS))
+                    {
+                        create(m);
+                    }
+                    if ("CheckExist".equals(PROCESS))
+                    {
+                        checkExist(m);
+                    }
+                    if ("Delete".equals(PROCESS))
+                    {
+                        delete(m);
+                    }
+                    if ("GetFile".equals(PROCESS))
+                    {
+                        getFile(m);
+                    }
+                }
+            }
+            else
+            {
+                if (args != null && args.length > 0 && args[0].equals("debug"))
+                {
+                    Logger.DataLogger("No data found.");
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Logger.DataLogger("Error : " + e.toString());
+            Logger.ErrorLogger(e);
+        }
+    }
+
+    public static void create(Map m) throws ClassNotFoundException, SQLException, IOException
+    {
+        int SRNO = (Integer) m.get("SRNO");
+        String PATH = (String) m.get("PATH");
+        String Decimalpattern = "^[a-zA-Z0-9/\\-_\\^]+$";
+        String[] splitPath = PATH.split("/");
+        String existPath = "/" + splitPath[1] + "/" + splitPath[2] + "/" + splitPath[3];
+
+        if (PATH.trim().matches(Decimalpattern) && new File(existPath).exists())
+        {
+            Logger.DataLogger("srno : " + SRNO);
+            Logger.DataLogger("path : " + PATH);
+
+            File f = new File(PATH);
+
+            if (f.exists())
+            {
+                sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'already exist' WHERE SRNO = " + SRNO);
+                Logger.DataLogger("Folder already Exist : " + PATH);
+            }
+            else
+            {
+                f.mkdirs();
+                Runtime.getRuntime().exec("/bin/chmod 777 -R " + f.getAbsolutePath());
+                sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'created' WHERE SRNO = " + SRNO);
+                Logger.DataLogger("created : " + PATH);
+            }
+        }
+        else
+        {
+            sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'invalid path' WHERE SRNO = " + SRNO);
+            Logger.DataLogger("Path is invalid : " + PATH);
+        }
+    }
+
+    public static void checkExist(Map m) throws ClassNotFoundException, SQLException
+    {
+
+        String comment;
+        int SRNO = (Integer) m.get("SRNO");
+        String PATH = (String) m.get("PATH");
+        String ServerName = (String) m.get("SERVER_NAME");
+
+        Logger.DataLogger("srno : " + SRNO);
+        Logger.DataLogger("path " + PATH);
+
+        if (ServerName.contains("sb1.nj"))
+        {
+            SBCommonOperation sbCommon = SBCommonOperation.getSBCommonOperation();
+            try
+            {
+                boolean existance = sbCommon.isFileExist(PATH.replaceFirst("/opt/application_storage/storage_box/", ""));
+                String exist = null;
+                if (existance)
+                {
+                    exist = "exist";
+
+                }
+                else
+                {
+                    exist = "not exist";
+                }
+                sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = '" + exist + "' WHERE SRNO = " + SRNO);
+                Logger.DataLogger(exist + " Folder : " + PATH);
+
+            }
+            catch (Exception ex)
+            {
+                String dirStatus = null;
+                if (ex.getMessage().contains("Exception: Not a file"))
+                {
+                    dirStatus = "exist";
+                }
+                else
+                {
+                    dirStatus = "error";
+                }
+                sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = '" + dirStatus + "' WHERE SRNO = " + SRNO);
+
+                Logger.DataLogger("Error : " + ex.toString());
+                Logger.ErrorLogger(ex);
+            }
+
+        }
+        else
+        {
+            File f = new File(PATH);
+            if (f.exists())
+            {
+                try
+                {
+                    PosixFileAttributes attrs = Files.readAttributes(f.toPath(), PosixFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
+                    GroupPrincipal group = attrs.group();
+                    UserPrincipal owner = attrs.owner();
+                    Set<PosixFilePermission> filePermission = attrs.permissions();
+
+                    Calendar cal = Calendar.getInstance();
+                    cal.setTimeInMillis(f.lastModified());
+                    String lastMod = cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
+                    lastMod += " " + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE);
+
+                    comment = ",Owner:".concat(owner.getName())
+                            .concat(",Group:").concat(group.getName())
+                            .concat(",Perm:").concat(PosixFilePermissions.toString(filePermission))
+                            .concat(",ModifiedTime:").concat(lastMod);
+                }
+                catch (IOException ioe)
+                {
+                    comment = "";
+                }
+                sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'exist"
+                        + comment + "' WHERE SRNO = " + SRNO);
+                Logger.DataLogger("Exist Folder : " + PATH);
+            }
+            else
+            {
+                sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'not exist' WHERE SRNO = " + SRNO);
+                Logger.DataLogger("Not Exist Folder : " + PATH);
+            }
+        }
+    }
+
+    public static void getFile(Map m) throws ClassNotFoundException, SQLException
+    {
+        int SRNO = (Integer) m.get("SRNO");
+        String PATH = (String) m.get("PATH");
+        String ServerName = (String) m.get("SERVER_NAME");
+        String comment = "error";
+        String filePath = null;
+
+        try
+        {
+            String sbfilepath = PATH.replaceFirst("/opt/application_storage/storage_box/", "");
+           
+	if (ServerName.equals("hosb1.nj"))
+            {
+                SBCommonOperation sbCommon = SBCommonOperation.getSBCommonOperation();
+                filePath = sbCommon.getFile(sbfilepath);
+            }
+            else
+            {
+                com.finlogic.util.StorageBoxImpl sb = SBCommonOperation.getStorageBoxImpl();
+                filePath = sb.getFile(sbfilepath, ServerName);
+
+            }
+		comment = filePath.replaceFirst("/opt/application_storage/temp_files/cache/", "");
+        }
+        catch (Exception ex)
+        {
+            String dirStatus="";
+           try
+{
+           if (ex.getMessage().contains("File not found"))
+            {
+                dirStatus = "not exist";
+            }
+            else
+            {
+                dirStatus = "error";
+            }
+}catch(Exception ex1)
+{
+ex1.printStackTrace();
+}
+            comment = dirStatus;
+            Logger.DataLogger("Error : " + ex.toString());
+
+        }
+
+        sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = '" + comment + "' WHERE SRNO = " + SRNO);
+
+    }
+
+    public static void delete(Map m) throws ClassNotFoundException, SQLException
+    {
+        int SRNO = (Integer) m.get("SRNO");
+        String PATH = (String) m.get("PATH");
+
+        Logger.DataLogger("srno : " + SRNO);
+        Logger.DataLogger("path : " + PATH);
+
+        File f = new File(PATH);
+
+        if (f.exists())
+        {
+            if (deleteFilesAndFolders(f))
+            {
+                sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'deleted' WHERE SRNO = " + SRNO);
+                Logger.DataLogger("Deleted Folder : " + PATH);
+            }
+        }
+        else
+        {
+            sqlUtility.persist(FINALIAS, " UPDATE FILEDIR_AUTO_REQUEST SET STATUS = 'done', COMMENT = 'not exist' WHERE SRNO = " + SRNO);
+            Logger.DataLogger("Not Exist Folder for Delete : " + PATH);
+        }
+    }
+
+    public static boolean checkRep(Map m)
+    {
+        String PATH = (String) m.get("PATH");
+        String SERVER_NAME = (String) m.get("SERVER_NAME");
+        String PROCESS = (String) m.get("PROCESS");
+
+        if (SERVER_NAME.contains("rep.nj"))
+        {
+            if (PROCESS.equals("Create"))
+            {
+                if (PATH.startsWith("/opt/apache-tomcat1/webapps/"))
+                {
+                    return false;
+                }
+                else
+                {
+                    if (PATH.startsWith("/var/www/html/"))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        if (PATH.startsWith("/opt/application_storage/storage_box/"))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            if (PATH.startsWith("/opt/application_storage/temp_files/"))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            if (PROCESS.equals("CheckExist"))
+            {
+                if (PATH.startsWith("/opt/apache-tomcat1/webapps/"))
+                {
+                    return true;
+                }
+                else
+                {
+                    if (PATH.startsWith("/var/www/html/"))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        if (PATH.startsWith("/opt/application_storage/storage_box/"))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            if (PATH.startsWith("/opt/application_storage/temp_files/"))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            if (PROCESS.equals("Delete"))
+            {
+                if (PATH.startsWith("/opt/apache-tomcat1/webapps/"))
+                {
+                    return false;
+                }
+                else
+                {
+                    if (PATH.startsWith("/var/www/html/"))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        if (PATH.startsWith("/opt/application_storage/storage_box/"))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            if (PATH.startsWith("/opt/application_storage/temp_files/"))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    public static boolean deleteFilesAndFolders(final File fileP)
+    {
+        if (fileP.isDirectory())
+        {
+            for (final File fileEntry : fileP.listFiles())
+            {
+                if (fileEntry.isDirectory())
+                {
+                    deleteFilesAndFolders(fileEntry);
+                }
+                else
+                {
+                    fileEntry.delete();
+                }
+            }
+        }
+        fileP.delete();
+        return true;
+    }
+
+    public static String getServerName() throws FileNotFoundException, IOException
+    {
+
+        String servername = InetAddress.getLocalHost().getHostName();
+
+        if (servername == null)
+        {
+            servername = "";
+        }
+        servername = servername.trim().toLowerCase();
+        if (!servername.contains(".nj"))
+        {
+            servername = servername + ".nj";
+        }
+        if (serverNames.contains("," + servername + ",") || serverNamesRep.contains("," + servername + ","))
+        {
+            return servername;
+        }
+        else
+        {
+            Logger.DataLogger("Invalid server name : " + servername);
+            return "NA";
+        }
+    }
+
+    public static boolean isValidPath(String PATH)
+    {
+        String[] filterPaths =
+        {
+            "/opt/apache-tomcat1/webapps/", "/var/www/html/", "/opt/application_storage/storage_box/", "/opt/application_storage/temp_files/"
+        };
+        boolean flag = false;
+
+        for (String filterPath : filterPaths)
+        {
+            if (PATH.startsWith(filterPath))
+            {
+                flag = true;
+            }
+        }
+        return flag;
+    }
+}

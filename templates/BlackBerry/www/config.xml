@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" 
+   xmlns:rim="http://www.blackberry.com/ns/widgets" 
+   version="#VERSION" rim:header="Finlogic Mobile App">
+
+    <name>#APP_NAME</name>
+    <description>#APP_NAME</description>
+    <author rim:copyright="Finlogic">Finlogic</author>	
+    <icon src="finhtml/images/Icon.png"/>
+
+    <content src="finhtml/#WELCOME_FILE" >
+    </content>
+    <access uri="*"/>
+	
+</widget>
+

@@ -1,0 +1,124 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+connection_audit_to=devtl@njgroup.in
+connection_audit_cc=devsrtl@njgroup.in,bhatu.mali@njgroup.in
+
+server_access_audit_404_to=devtl@njgroup.in
+server_access_audit_404_cc=devsrtl@njgroup.in,bhatu.mali@njgroup.in
+
+server_access_audit_extime_to=devtl@njgroup.in
+server_access_audit_extime_cc=devsrtl@njgroup.in,bhatu.mali@njgroup.in
+
+server_access_audit_bytes_to=devtl@njgroup.in
+server_access_audit_bytes_cc=devsrtl@njgroup.in,bhatu.mali@njgroup.in
+
+server_access_audit_jquery_path_to=devtl@njgroup.in
+server_access_audit_jquery_path_cc=devsrtl@njgroup.in,bhatu.mali@njgroup.in
+
+jar_file_audit_to=devtl@njgroup.in
+jar_file_audit_cc=devsrtl@njgroup.in,bhatu.mali@njgroup.in
+
+log_cleanup_to=devtl@njgroup.in
+log_cleanup_cc=devsrtl@njgroup.in,bhatu.mali@njgroup.in
+
+aclagent_audit_to=devtl@njgroup.in
+aclagent_audit_cc=devsrtl@njgroup.in,bhatu.mali@njgroup.in
+
+#10 MIN
+min_execution_time_sec=600
+
+#15 MB
+min_bytes_sent=15728640
+
+#Max Days
+logcleanup_audit_max_days=17
+
+#Max Size in MB
+logcleanup_audit_max_size=8
+
+#Weekly mail day Manday=2
+jar_audit_weekly_mail_day=2
+
+#Weekly mail day Manday=2
+aclagent_audit_weekly_mail_day=0
+
+#Weekly mail day Manday=2
+log_cleanup_audit_weekly_mail_day=0
+
+#DEV_MYSQL
+dev_mysql_user=njindiainvest
+dev_mysql_password=njfinlogic
+dev_mysql_url=jdbc:mysql://192.168.3.24:3306/njindiainvest?auto_reconnect=true
+dev_mysql_driver=com.mysql.jdbc.Driver
+
+#DEV_MYSQL2
+dev_db2_mysql_user=njindiainvest
+dev_db2_mysql_password=njindiainvest
+dev_db2_mysql_url=jdbc:mysql://192.168.3.11:3306/njindiainvest?auto_reconnect=true
+dev_db2_mysql_driver=com.mysql.jdbc.Driver
+
+#DEV_TRAN
+dev_tran_user=mftran
+dev_tran_password=ora#1tran
+dev_tran_url=jdbc:oracle:thin:@192.168.3.15:1521:findevtran
+dev_tran_driver=oracle.jdbc.driver.OracleDriver
+
+#DEV_BROK
+dev_brok_user=mfund
+dev_brok_password=ora#2fund
+dev_brok_url=jdbc:oracle:thin:@192.168.3.15:1521:findevbrok
+dev_brok_driver=oracle.jdbc.driver.OracleDriver
+
+#TEST_MYSQL
+test_mysql_user=njindiainvest
+test_mysql_password=njindiainvest
+test_mysql_url=jdbc:mysql://192.168.3.13:3306/njindiainvest?auto_reconnect=true
+test_mysql_driver=com.mysql.jdbc.Driver
+
+#TEST_MYSQL2
+test_db2_mysql_user=njindiainvest
+test_db2_mysql_password=njindiainvest
+test_db2_mysql_url=jdbc:mysql://192.168.3.12:3306/njindiainvest?auto_reconnect=true
+test_db2_mysql_driver=com.mysql.jdbc.Driver
+
+#TEST_TRAN
+test_tran_user=mftran
+test_tran_password=ora#1tran
+test_tran_url=jdbc:oracle:thin:@192.168.3.1:1521:njtesttran
+test_tran_driver=oracle.jdbc.driver.OracleDriver
+
+#TEST_BROK
+test_brok_user=mfund
+test_brok_password=ora#2fund
+test_brok_url=jdbc:oracle:thin:@192.168.3.1:1521:njtestbrok
+test_brok_driver=oracle.jdbc.driver.OracleDriver
+
+#ANDROID_PATH
+android_path=/opt/android-sdks/tools
+
+#ANT_PATH
+ant_path=/opt/apache-ant-1.8.2/bin
+
+#Actual Servers
+##actual_server=mftran-g1:NJTran;mfund-g2:NJBrok;mfund_mis-g3:NJMIS;njindiainvest_offline-g4:HX5
+##actual_server=1:mftran;2:mfund;3:mfund_mis;4:pss_njmis;5:njindiainvest_offline
+##actual_server=1:mftran;2:mfund;3:mfund_mis;4:mfund;5:njindiainvest_offline;6:db2_admin
+actual_server=1:mftran;2:mfund;3:mfund_mis;4:pss_njmis;5:njindiainvest_offline;6:db2_admin
+
+#Syntax Verification Servers
+##verify_server=test_tran-g1:TestTran;test_brok-g2:TestBrok;test_tran-g3:TestTran-TestMIS;test_mysql-g4:TestMysql
+##verify_server=1:test_tran-TestTran,dev_tran-FinDevTran;2:test_brok-TestBrok,dev_brok-FinDevBrok;3:test_brok-TestBrok_TestMIS,dev_brok-DevBrok_DevMIS;4:test_brok-TestBrok_TestPSS,dev_brok-DevBrok_DevPSS;5:test_mysql-TestMysql,dev_mysql-FinDevMysql
+verify_server=1:test_tran-TestTran,dev_tran-FinDevTran;2:test_brok-TestBrok,dev_brok-FinDevBrok;3:test_brok-TestBrok_TestMIS,dev_brok-DevBrok_DevMIS;4:test_brok-TestBrok_TestPSS,dev_brok-DevBrok_DevPSS;5:test_mysql-TestMysql,dev_mysql-FinDevMysql;6:test_db2_mysql-Test2Mysql,dev_db2_mysql-FinDev2Mysql
+
+#Valid Data Request Halt,Resume,Cancel
+data_request_valid_request_processor=V0155,H0089,B0023,S0064,P0043,P6065,K0028
+#Valid Data Valid excutors
+data_request_valid_executor=V0155,H0089,M0242,M0250,V0208
+
+#dbdiff_dev_server=1:dev_tran;2:dev_brok;3:dev_brok;4:dev_brok;5:dev_mysql
+dbdiff_dev_server=1:dev_tran;2:dev_brok;3:dev_brok;4:dev_brok;5:dev_mysql;6:dev_db2_mysql
+
+#dbdiff_test_server=1:test_tran;2:test_brok;3:test_brok;4:test_brok;5:test_mysql
+dbdiff_test_server=1:test_tran;2:test_brok;3:test_brok;4:test_brok;5:test_mysql;6:test_db2_mysql
+

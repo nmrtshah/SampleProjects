@@ -1,0 +1,85 @@
+<%-- TCIGBF --%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="common" uri="http://www.njtechnologies.in/tags/filebox" %>
+<div class="report_content" id="rpt">
+    <c:if test="${action eq 'Main'}">
+        <div class="menu_caption_bg">
+            <div id="divAddCaption" class="menu_caption_text">Report</div>
+        </div>
+    </c:if>
+
+    <c:if test="${action eq 'Main'}">
+        <table align="center" border="0" cellpadding="0" cellspacing="2" class="menu_subcaption" width="100%">
+            <tr>
+                <td align="right" class="report_content_caption" style="vertical-align: top" >
+                    Source-Destination<sup class="astriek">*</sup> :
+                </td>
+                <td class="report_content_value">
+                    <select class="custom_combo_showSSWT " id="cmbsrcdest" name="cmbsrcdest" tabindex="1" multiple="multiple" style="min-width: 200px; width: auto; height: 75px;">
+                        <optgroup label="Dev-Test">
+                            <option value="devweb1.nj:8090-testweb1.nj:8090">devweb1.nj - testweb1.nj</option>
+                            <option value="devweb2.nj:8090-testweb2.nj:8090">devweb2.nj - testweb2.nj</option>
+                            <option value="devweb3.nj:8090-testweb3.nj:8090">devweb3.nj - testweb3.nj</option>
+                            <option value="devweb4.nj:8090-testweb4.nj:8090">devweb4.nj - testweb4.nj</option>
+                            <option value="dhoweb1.nj:8090-thoweb1.nj:8090">dhoweb1.nj - thoweb1.nj</option>
+                            <option value="dhoweb2.nj:8090-thoweb2.nj:8090">dhoweb2.nj - thoweb2.nj</option>
+                            <option value="dhoweb3.nj:8090-thoweb3.nj:8090">dhoweb3.nj - thoweb3.nj</option>
+                            <option value="dhoweb4.nj:8090-thoweb4.nj:8090">dhoweb4.nj - thoweb4.nj</option>
+                        </optgroup>
+                        <optgroup label="Test-Prod">
+                            <option value="testweb1.nj:8090-howeb1.nj:8090">testweb1.nj - howeb1.nj</option>
+                            <option value="testweb2.nj:8090-howeb2.nj:8090">testweb2.nj - howeb2.nj</option>
+                            <option value="testweb3.nj:8090-howeb3.nj:8090">testweb3.nj - howeb3.nj</option>
+                            <option value="testweb3.nj:8090-howeb4.nj:8090">testweb3.nj - howeb4.nj</option>
+                            <option value="testweb4.nj:8090-howeb4.nj:8090">testweb4.nj - howeb4.nj</option>
+                            <option value="thoweb1.nj:8090-phoweb1.nj:8090">thoweb1.nj - phoweb1.nj</option>
+                            <option value="thoweb2.nj:8090-phoweb2.nj:8090">thoweb2.nj - phoweb2.nj</option>
+                            <option value="thoweb3.nj:8090-phoweb3.nj:8090">thoweb3.nj - phoweb3.nj</option>
+                            <option value="thoweb3.nj:8090-phoweb4.nj:8090">thoweb3.nj - phoweb4.nj</option>
+                            <option value="thoweb4.nj:8090-phoweb4.nj:8090">thoweb4.nj - phoweb4.nj</option>
+                            <!--
+                                <option value="testweb3.nj:8090-njapps.nj:8080">testweb3.nj - njapps.nj</option>
+                                <option value="testweb3.nj:8090-njimage.nj:8080">testweb3.nj - njimage.nj</option>
+                            -->
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" class="report_content_caption">
+                    Project <sup class="astriek">*</sup>:
+                </td>
+                <td class="report_content_value">
+                    <select id="cmbprojectName" name="cmbprojectName" tabindex="2" >
+                        <option value="-1">-- Select Project --</option>
+                        <c:forEach items="${projects}" var="project">
+                            <option value="${project.PRJ_ID}">${project.PRJ_NAME} - ${project.DOMAIN_NAME}</option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right" class="report_content_caption">
+                    File Name <sup class="astriek">*</sup>:
+                </td>
+                <td class="report_content_value">
+                    <input type="text" name="txtFilename" id="txtFilename" tabindex="3">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right" class="astriek"><i>Note :</i></td>
+                <td class="astriek"><i>Latest 500 matching entries will be displayed.</i></td>
+            </tr>
+
+            <tr>
+                <td align="center" colspan="2">
+                    <input class="button" type="button" id="btnReport" name="btnReport" Value="Report" onclick="javascript: validateReportData();" />
+                    <input class="button" type="reset" id="btnReset" name="btnReset" Value="Reset" onclick="javascript: resetAll();"/>
+                </td>
+            </tr>
+
+        </table>
+    </c:if>
+</div>

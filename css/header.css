@@ -1,0 +1,550 @@
+A
+{
+    COLOR: darkblue;
+    TEXT-DECORATION: none;
+}
+A:hover
+{
+    COLOR: royalblue;
+    TEXT-DECORATION: underline;
+}
+BODY
+{
+    FONT-SIZE: 10pt;
+    FONT-FAMILY: arial,verdana,helvetica;
+    BACKGROUND-COLOR: #ffffff;
+    color: #FF0000;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+P
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    TEXT-INDENT: 0px;
+    LINE-HEIGHT: 17px;
+    FONT-STYLE: normal;
+    FONT-FAMILY: arial,sans-serif
+}
+
+select,TEXTAREA
+{
+    BORDER-RIGHT: #b2b2b2 2px solid; PADDING-RIGHT: 0px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 1px; FONT: 12.5px
+    verdana,Arial; BORDER-LEFT: #b2b2b2 1px solid;
+    COLOR: #353535; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid;
+    WIDTH:200pt;
+    TEXT-DECORATION: none
+}
+input[type="TEXT"]
+{
+    BORDER-RIGHT: #b2b2b2 2px solid; PADDING-RIGHT: 0px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 1px; FONT: 12.5px
+    verdana,Arial; BORDER-LEFT: #b2b2b2 1px solid;
+    COLOR: #353535; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid;
+    WIDTH:200pt;
+    TEXT-DECORATION: none
+}
+
+input[type="button"]
+{
+    color:#303030;
+    font-size:10pt;
+    font-family:verdana;
+    border:1px solid black;
+    cursor:pointer
+}
+input[type="submit"]
+{
+    color:#303030;
+    font-size:10pt;
+    font-family:verdana;
+    border:1px solid black;
+    cursor:pointer
+}
+input[type="reset"]
+{
+    color:#303030;
+    font-size:10pt;
+    font-family:verdana;
+    border:1px solid black;
+    cursor:pointer
+}
+.A_link
+{
+    COLOR: darkblue;
+    TEXT-DECORATION: none;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT : bold;
+}
+.link
+{
+
+    font-size: 9pt;
+    color: darkblue;
+    FONT-WEIGHT: normal;
+}
+.Main_HeaderTable
+{
+    /*width='100%' align='center'  border='0' cellpadding='0' cellspacing='0' bgcolor='#FF0000' style='border:1px ridge #666666;' */
+
+    width: 100%;
+    border:1px ridge #666666;
+    background-color: #FF0000;
+}
+.BgImage_HeaderTable
+{
+    /*background='../images/top_back.gif'; style='padding-right:10px;color:white;font-weight:bold' */
+    background-image: url(../images/top_back.gif);
+    padding-right:10px;
+    color:white;
+    font-weight:bold;
+    font-size:18px;
+}
+.Row_Header/* used for welcome row & menu row */
+{
+    /*STYLE='padding-left:3pt; font-size:10pt' */
+    font-size:10pt;
+    background-image: url(../images/bg_menuicon.jpg);
+    padding-left:3pt;
+}
+
+.Line_Header /* used for line shown in header file */
+{
+    /* BGCOLOR='black' NOWRAP HEIGHT='1' style='width:100%' */
+    height:1px;
+    width:100%;
+    background-color: #000000;
+}
+.menuHead /* Added by Disha---Master,Transaction,Reports written in left panel */
+{
+    text-align:center;
+    font-weight:bold;
+    background-color:red;
+    color:white;
+    height: 20px;
+
+}
+.clsbtnon /* Used in main menu */
+{
+
+    PADDING-RIGHT: 3px;
+    PADDING-LEFT: 3px;
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 10pt;
+    PADDING-BOTTOM: 0px;
+    /* COLOR: gray; */
+    COLOR:black;
+    PADDING-TOP: 0px;
+}
+.mnubtn_blk
+{
+    BORDER-RIGHT: #6699cc 2px outset;
+    PADDING-RIGHT: 3px;
+    BORDER-TOP: #6699cc 2px outset;
+    PADDING-LEFT: 3px;
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 12pt;
+    PADDING-BOTTOM: 0px;
+    BORDER-LEFT: #6699cc 2px outset;
+    COLOR: #000000;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: #6699cc 2px outset;
+    BACKGROUND-COLOR: #008ed5;
+    background: url(../images/gradient1.jpg) ;
+    height:30px;
+
+}
+.menuMst_td /* Added by Disha */
+{
+    BACKGROUND-COLOR: #F8F8F8;
+    border-top-style: ridge;
+    border-bottom-style: ridge;
+    border-left-style: ridge;
+    border-right-style: ridge;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #a0a0a0;
+    border-bottom-color: #a0a0a0;
+    border-left-color: #a0a0a0;
+    border-right-color: #a0a0a0;
+    padding-left: 10px;
+    height: 20px;
+}
+.submenuMst_td /* Added by Disha */
+{
+    padding-left: 20px;
+}
+
+.subsubmenuMst_td /* Added by Dipal */
+{
+    padding-left: 30px;
+}
+
+.menu_link /* Added by Disha */
+{
+    PADDING-RIGHT: 3px;
+    PADDING-LEFT: 5px;
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 9pt;
+    PADDING-BOTTOM: 0px;
+    COLOR: gray;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: arial,verdana,helvetica;
+
+}
+.NoRecord
+{
+    height: 30px;
+    color: black;
+    FONT-SIZE: 12pt;
+    align:center;
+}
+.successMSG
+{
+    font-family: Liberation Serif;
+    font-size: 12pt;
+    text-align: center;
+    COLOR: red;
+}
+.tablecaption
+{
+
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    color: #000000;
+    BACKGROUND-COLOR: #CCCCCC;
+    text-decoration: none;
+    TEXT-ALIGN: center;
+    height:25px;
+    vertical-align: middle;
+
+}
+.draftTechDoc
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    BACKGROUND-COLOR: #89b7d5; /*#7abbdf;*/
+
+}
+.rptdata
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    BACKGROUND-COLOR: #eeeeee
+
+}
+.rptdata1
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    BACKGROUND-COLOR: #E5E5E5
+
+}
+.font7
+{
+    FONT-SIZE: 7pt;
+    COLOR: black
+}
+.font7b
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 7pt;
+    COLOR: black;
+    TEXT-ALIGN: center
+}
+.font8
+{
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: Arial
+}
+.font8b
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    TEXT-ALIGN: center
+}
+.font9
+{
+    FONT-SIZE: 9pt;
+    COLOR: black
+}
+.font9b
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    TEXT-ALIGN: center;
+    BACKGROUND-COLOR: #CCCCCC
+}
+.font10
+{
+    FONT-SIZE: 10pt;
+    COLOR: black
+}
+.font11
+{
+    FONT-SIZE: 11pt;
+    COLOR: black
+}
+.font11_white
+{
+    FONT-SIZE: 11pt;
+    COLOR: white;
+    FONT-WEIGHT: bold;
+    text-align: center;
+}
+.tdleft {
+
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    color: #000000;
+    BACKGROUND-COLOR: #CCCCCC;
+    text-decoration: none;
+    TEXT-ALIGN: left;
+    height: 20px;
+}
+.tdleftdata {
+
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #000000;
+    BACKGROUND-COLOR: #E5E5E5;
+    text-decoration: none;
+    TEXT-ALIGN: left
+}
+.font_red
+{
+    COLOR: red;
+
+}
+.font_green
+{
+    COLOR: green;
+
+}
+.font_blue
+{
+    COLOR: blue;
+}
+.bgcolor_grade /* added by Disha Devaiya */
+{
+    background-color: #FFC6B9;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+}
+.bgcolor_gray /* added by Disha Devaiya */
+{
+    background-color: #CCCCCC;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+}
+
+.red_bgcolor    /* used for Request Status ---displayRow in WFMS */
+{
+    BACKGROUND-COLOR: red;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: bold;
+    COLOR: white;
+    text-align: center;
+}
+.green_bgcolor
+{
+    background:#7DC093;
+}
+
+/* following class are used in Task List */
+.reqstatus    /* used for Request Status ---displayRow in WFMS */
+{
+    BACKGROUND-COLOR: #e6e6ec;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+}
+.infoReqd /* used for inforequire ---reqstatus1_bgcolor in WFMS*/
+{
+    background:#D49FFF; /*#F3D1FF; */
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+}
+.pausetask /* used for Pause by ---reqstatus3_bgcolor in WFMS*/
+{
+    background:#A6D7FF;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+}
+.halttask /* used for on halt task ---reqstatus2_bgcolor in WFMS*/
+{
+    background:#CDFFBB; /* #D2FBC3; */
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+}
+.retesttask /* used for Retest Task */
+{
+    background:#FFF9A8;/*#FFFBAB; */
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+}
+/* ************************  */
+.activity_bgcolor
+{
+    background:#FFEDC8; /* #89a9d0; */
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+
+}
+.query_bgcolor
+{
+    background:#D0C6FF;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+}
+.minvalue_bgcolor
+{
+    background:#7DC093;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+    text-align:center;
+}
+.rangevalue_bgcolor
+{
+    background:#7BBAC0;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+    text-align:center;
+}
+.maxvalue_bgcolor
+{
+    background:#C0996A;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal;
+    text-align:center;
+}
+.table_color_black /*Added by Dipika Padhi*/
+{
+    BACKGROUND-COLOR:black;
+}
+.table_color_white /*Added by Dipika Padhi*/
+{
+    BACKGROUND-COLOR:white;
+}
+.datecombowidth
+{
+    WIDTH: 45pt;
+}
+.mediumcombowidth /* used in task list in request and query combo */
+{
+    width: 80pt;
+}
+.mediumtextwidth
+{
+    BORDER-RIGHT: #b2b2b2 2px solid;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: #b2b2b2 1px solid;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 1px;
+    FONT: 12.5pxverdana,Arial;
+    BORDER-LEFT: #b2b2b2 1px solid;
+    COLOR: #353535;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: #b2b2b2 1px solid;
+    WIDTH:50pt;
+    TEXT-DECORATION: none
+}
+
+.tdrightdata
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    line-height: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #000000;
+    BACKGROUND-COLOR: #E5E5E5;
+    text-decoration: none;
+    TEXT-ALIGN: right
+}
+.bluebar
+{
+    BORDER-TOP: black;
+    COLOR: white;
+    BACKGROUND-COLOR: #6699cc
+}
+input[type="button"], input[type="submit"], input[type="reset"], input[type="Close"]
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    color: #000000;
+    BACKGROUND-COLOR: #CCCCCC;
+    text-decoration: none;
+}
+.tdCell /* By Dipika Padhi*/
+{
+    /*background-color:#E6E6EC;*/
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    LINE-HEIGHT: normal;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Tahoma;
+    TEXT-ALIGN: left;
+}
+.font_underline /* By Dipika Padhi 11-09-2009*/
+{
+    TEXT-DECORATION: underline;
+}
+.tdCellStatusChanged /* By Dipika Padhi 11-09-2009*/
+{
+    /*background-color:#E6E6EC;*/
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 9pt;
+    COLOR: #1f1b6a;
+    LINE-HEIGHT: normal;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Tahoma;
+    TEXT-ALIGN: center;
+}
+.tdCellCenter /* By Dipika Padhi 11-09-2009*/
+{
+    /*background-color:#E6E6EC;*/
+    FONT-WEIGHT: 500;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    LINE-HEIGHT: normal;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial, Tahoma;
+    TEXT-ALIGN: center
+}
+.tdImproperTime
+{   COLOR:white;
+    BACKGROUND-COLOR:#DE5E60;/*#a8d9c2;/*#FFEDC8;;/*#CDFFB2;#CDFFB2#FFD2B4;*/
+    FONT-SIZE: 9pt;
+    font-style:oblique;
+    font-weight:bold
+}
